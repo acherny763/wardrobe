@@ -86,11 +86,17 @@ namespace wardrobe
 
         private void TB_pass_Enter(object sender, EventArgs e)
         {
+            TB_pass.BackColor = GlobalColors.activeElem;
+            textBox2.BackColor = GlobalColors.activeElem;
+            
             ClearTextBox();
         }
 
         private void TB_login_Enter(object sender, EventArgs e)
         {
+            TB_login.BackColor = GlobalColors.activeElem;
+            textBox1.BackColor = GlobalColors.activeElem;
+            
             ClearTextBox();
         }
 
@@ -101,6 +107,9 @@ namespace wardrobe
                 TB_login.Text = "Логин";
                 TB_login.ForeColor = GlobalColors.darkTxt;
             }
+            
+            TB_login.BackColor = GlobalColors.lightBg;
+            textBox1.BackColor = GlobalColors.lightBg;
         }
 
         private void TB_pass_Leave(object sender, EventArgs e)
@@ -110,6 +119,9 @@ namespace wardrobe
                 TB_pass.Text = "Пароль";
                 TB_pass.ForeColor = GlobalColors.darkTxt;
             }
+            
+            TB_pass.BackColor = GlobalColors.lightBg;
+            textBox2.BackColor = GlobalColors.lightBg;
         }
     }
 }

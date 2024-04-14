@@ -23,8 +23,8 @@
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -68,7 +68,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(28, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 32);
+            this.label1.Size = new System.Drawing.Size(182, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Авторизация";
             // 
@@ -89,6 +89,7 @@
             this.TB_pass.Size = new System.Drawing.Size(208, 20);
             this.TB_pass.TabIndex = 4;
             this.TB_pass.Text = "Пароль";
+            this.TB_pass.TextChanged += new System.EventHandler(this.TB_pass_TextChanged);
             // 
             // Form1
             // 
@@ -107,7 +108,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

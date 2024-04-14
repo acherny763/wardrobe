@@ -13,7 +13,6 @@ C:\Users\Дом\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.exe
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.pdb
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\bin\Debug\wardrobe.exe.config
-C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\bin\Debug\wardrobe.exe
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\bin\Debug\wardrobe.pdb
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.AssemblyReference.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.SuggestedBindingRedirects.cache
@@ -24,3 +23,4 @@ C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
+C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete

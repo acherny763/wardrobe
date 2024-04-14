@@ -15,18 +15,51 @@ namespace wardrobe
     public partial class Form1 : Form
     {
         DataBase _dataBase = new DataBase();
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
         public Form1()
         {
             InitializeComponent();
+            this.BackColor = GlobalColors.bg;
+            this.Shown += Form1_Shown;
+            heading.ForeColor = GlobalColors.white;
             StartPosition = FormStartPosition.CenterScreen;
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        
+        private void ClearTextBox()
         {
+            if (TB_pass.Focused && TB_pass.Text == "Пароль")
+            {
+                TB_pass.Text = "";
+                TB_pass.ForeColor = GlobalColors.white;
+                TB_pass.PasswordChar = '*';
+            }
 
+            if (TB_login.Focused && TB_login.Text == "Логин")
+            {
+                TB_login.Text = "";
+                TB_login.ForeColor = GlobalColors.white;
+            }
         }
 
-        private void Btn_log_Click(object sender, EventArgs e)
+        private void TB_login_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+        }
+        
+        private void TB_login_TextChanged(object sender, EventArgs e)
+        {
+            ClearTextBox();
+        }
+
+        private void TB_pass_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+        }
+
+        private void BTN_log_Click(object sender, EventArgs e)
         {
             var login = TB_login.Text;
             var password = TB_pass.Text;
@@ -44,21 +77,39 @@ namespace wardrobe
             if (table.Rows.Count == 1)
             {
                 MessageBox.Show("Вы успешно вошли!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Form1 form1 = new Form1();
-                this.Hide();
-                form1.ShowDialog();
-                this.Show();
             }
             else
             {
                 MessageBox.Show("Такого акканта не существует", "Неуспешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
-        private void TB_pass_TextChanged(object sender, EventArgs e)
+        private void TB_pass_Enter(object sender, EventArgs e)
         {
-            TB_pass.PasswordChar = '*';
+            ClearTextBox();
+        }
+
+        private void TB_login_Enter(object sender, EventArgs e)
+        {
+            ClearTextBox();
+        }
+
+        private void TB_login_Leave(object sender, EventArgs e)
+        {
+            if (TB_login.Text == "")
+            {
+                TB_login.Text = "Логин";
+                TB_login.ForeColor = GlobalColors.darkTxt;
+            }
+        }
+
+        private void TB_pass_Leave(object sender, EventArgs e)
+        {
+            if (TB_pass.Text == "")
+            {
+                TB_pass.Text = "Пароль";
+                TB_pass.ForeColor = GlobalColors.darkTxt;
+            }
         }
     }
 }

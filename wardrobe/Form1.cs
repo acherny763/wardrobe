@@ -34,6 +34,7 @@ namespace wardrobe
             {
                 TB_pass.Text = "";
                 TB_pass.Text = "";
+                TB_pass.Text = "";
                 TB_pass.ForeColor = GlobalColors.white;
                 TB_pass.PasswordChar = '*';
             }

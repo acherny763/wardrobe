@@ -23,7 +23,6 @@ namespace wardrobe
         {
             InitializeComponent();
             this.BackColor = GlobalColors.bg;
-            this.BackColor = GlobalColors.bg;
             this.Shown += Form1_Shown;
             heading.ForeColor = GlobalColors.white;
             StartPosition = FormStartPosition.CenterScreen;

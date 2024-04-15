@@ -43,7 +43,11 @@ namespace wardrobe
                 TB_login.ForeColor = GlobalColors.white;
             }
         }
-
+        private void ClearTex()
+        {
+           
+            
+        }
         private void TB_login_Click(object sender, EventArgs e)
         {
             ClearTextBox();

@@ -64,6 +64,7 @@
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalColors.cs" />
+    <Compile Include="headerMouseMove.cs" />
     <Compile Include="persona.cs">
       <SubType>Form</SubType>
     </Compile>

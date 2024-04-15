@@ -10,30 +10,40 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
 namespace wardrobe
 {
 
     public partial class Form1 : Form
     {
-        DataBase _dataBase = new DataBase();
+        private readonly DataBase _dataBase = new DataBase();
+        
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+        
+        private readonly HeaderMouseMove _headerMouseMove = new HeaderMouseMove();
+        
         private void Form1_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
         }
+        
         public Form1()
         {
             InitializeComponent();
+
             this.BackColor = GlobalColors.bg;
             this.Shown += Form1_Shown;
-            heading.ForeColor = GlobalColors.white;
-            panelSingIn.ForeColor = GlobalColors.dark;
-            StartPosition = FormStartPosition.CenterScreen;
+            
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            
+            LB_header.ForeColor = GlobalColors.txt;
+            heading.ForeColor = GlobalColors.white;
+            header.ForeColor = GlobalColors.dark;
+            StartPosition = FormStartPosition.CenterScreen;
         }
-        
+
         private void ClearTextBox()
         {
             if (TB_pass.Focused && TB_pass.Text == "Пароль")
@@ -130,33 +140,34 @@ namespace wardrobe
             textBox2.BackColor = GlobalColors.lightBg;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void LB_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        
+        private void LB_roll_Click(object sender, EventArgs e)
         {
-            
+            this.WindowState = FormWindowState.Minimized;
         }
-        Point lastPoint;
-        private void panelSingIn_MouseMove(object sender, MouseEventArgs e)
+        
+        private void panelSignIn_MouseMove(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
+            _headerMouseMove.MoveForm(e, this);
+        }
+        
+        private void panelSignIn_MouseDown(object sender, MouseEventArgs e)
+        {
+            _headerMouseMove.SetLastPoint(e);
+        }
+        
+        private void LB_header_MouseMove(object sender, MouseEventArgs e)
+        {
+            _headerMouseMove.MoveForm(e, this);
         }
 
-        private void panelSingIn_MouseDown(object sender, MouseEventArgs e)
+        private void LB_header_MouseDown(object sender, MouseEventArgs e)
         {
-            lastPoint = new Point(e.X, e.Y);
+            _headerMouseMove.SetLastPoint(e);
         }
     }
 }

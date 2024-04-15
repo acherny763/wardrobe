@@ -42,23 +42,25 @@ namespace wardrobe
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelSingIn = new System.Windows.Forms.Panel();
+            this.LB_close = new System.Windows.Forms.Label();
+            this.header = new System.Windows.Forms.Panel();
+            this.LB_roll = new System.Windows.Forms.Label();
+            this.LB_header = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelSingIn.SuspendLayout();
+            this.header.SuspendLayout();
             this.SuspendLayout();
             // 
             // heading
             // 
             this.heading.AutoSize = true;
-            this.heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.heading.Font = new System.Drawing.Font("Manrope", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.heading.ForeColor = System.Drawing.SystemColors.Window;
             this.heading.Location = new System.Drawing.Point(22, 61);
             this.heading.Margin = new System.Windows.Forms.Padding(0);
             this.heading.Name = "heading";
             this.heading.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.heading.Size = new System.Drawing.Size(211, 37);
+            this.heading.Size = new System.Drawing.Size(229, 44);
             this.heading.TabIndex = 2;
             this.heading.Text = "Авторизация";
             // 
@@ -67,14 +69,14 @@ namespace wardrobe
             this.TB_login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.TB_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
             this.TB_login.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TB_login.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TB_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
             this.TB_login.Location = new System.Drawing.Point(52, 144);
             this.TB_login.Margin = new System.Windows.Forms.Padding(20);
             this.TB_login.MaxLength = 25;
             this.TB_login.Name = "TB_login";
             this.TB_login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TB_login.Size = new System.Drawing.Size(320, 22);
+            this.TB_login.Size = new System.Drawing.Size(320, 26);
             this.TB_login.TabIndex = 3;
             this.TB_login.Text = "Логин";
             this.TB_login.Click += new System.EventHandler(this.TB_login_Click);
@@ -87,13 +89,12 @@ namespace wardrobe
             this.TB_pass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.TB_pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
             this.TB_pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TB_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
             this.TB_pass.Location = new System.Drawing.Point(52, 210);
             this.TB_pass.Margin = new System.Windows.Forms.Padding(20);
             this.TB_pass.MaxLength = 20;
             this.TB_pass.Name = "TB_pass";
-            this.TB_pass.Size = new System.Drawing.Size(320, 22);
+            this.TB_pass.Size = new System.Drawing.Size(320, 25);
             this.TB_pass.TabIndex = 4;
             this.TB_pass.Text = "Пароль";
             this.TB_pass.Click += new System.EventHandler(this.TB_pass_Click);
@@ -200,36 +201,66 @@ namespace wardrobe
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // LB_close
             // 
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.label1.Location = new System.Drawing.Point(386, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.LB_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LB_close.Font = new System.Drawing.Font("Manrope", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.LB_close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.LB_close.Location = new System.Drawing.Point(386, 4);
+            this.LB_close.Name = "LB_close";
+            this.LB_close.Size = new System.Drawing.Size(22, 22);
+            this.LB_close.TabIndex = 0;
+            this.LB_close.Text = "×";
+            this.LB_close.Click += new System.EventHandler(this.LB_close_Click);
             // 
-            // panelSingIn
+            // header
             // 
-            this.panelSingIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelSingIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelSingIn.Controls.Add(this.label1);
-            this.panelSingIn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSingIn.Location = new System.Drawing.Point(0, 0);
-            this.panelSingIn.Name = "panelSingIn";
-            this.panelSingIn.Size = new System.Drawing.Size(420, 42);
-            this.panelSingIn.TabIndex = 11;
-            this.panelSingIn.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panelSingIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSingIn_MouseDown);
-            this.panelSingIn.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSingIn_MouseMove);
+            this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
+            this.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.header.Controls.Add(this.LB_roll);
+            this.header.Controls.Add(this.LB_header);
+            this.header.Controls.Add(this.LB_close);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(420, 42);
+            this.header.TabIndex = 11;
+            this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSignIn_MouseDown);
+            this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSignIn_MouseMove);
+            // 
+            // LB_roll
+            // 
+            this.LB_roll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LB_roll.Font = new System.Drawing.Font("Manrope", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.LB_roll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.LB_roll.Location = new System.Drawing.Point(355, 3);
+            this.LB_roll.Name = "LB_roll";
+            this.LB_roll.Size = new System.Drawing.Size(22, 22);
+            this.LB_roll.TabIndex = 13;
+            this.LB_roll.Text = "—";
+            this.LB_roll.Click += new System.EventHandler(this.LB_roll_Click);
+            // 
+            // LB_header
+            // 
+            this.LB_header.AutoSize = true;
+            this.LB_header.Font = new System.Drawing.Font("Manrope", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.LB_header.ForeColor = System.Drawing.SystemColors.Window;
+            this.LB_header.Location = new System.Drawing.Point(10, 10);
+            this.LB_header.Margin = new System.Windows.Forms.Padding(0);
+            this.LB_header.Name = "LB_header";
+            this.LB_header.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LB_header.Size = new System.Drawing.Size(114, 21);
+            this.LB_header.TabIndex = 12;
+            this.LB_header.Text = "Гардероб ТПК";
+            this.LB_header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_header_MouseDown);
+            this.LB_header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_header_MouseMove);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(420, 423);
-            this.Controls.Add(this.panelSingIn);
+            this.Controls.Add(this.header);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BTN_reg);
@@ -239,23 +270,27 @@ namespace wardrobe
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.heading);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Гардероб ТПК";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelSingIn.ResumeLayout(false);
+            this.header.ResumeLayout(false);
+            this.header.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LB_roll;
 
-        private System.Windows.Forms.Panel panelSingIn;
+        private System.Windows.Forms.Label LB_header;
+
+        private System.Windows.Forms.Label LB_close;
+
+        private System.Windows.Forms.Panel header;
 
         private System.Windows.Forms.PictureBox pictureBox2;
 

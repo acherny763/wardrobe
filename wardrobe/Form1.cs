@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 namespace wardrobe
 {
 
     public partial class Form1 : Form
     {
         DataBase _dataBase = new DataBase();
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         private void Form1_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
@@ -25,7 +28,10 @@ namespace wardrobe
             this.BackColor = GlobalColors.bg;
             this.Shown += Form1_Shown;
             heading.ForeColor = GlobalColors.white;
+            panelSingIn.ForeColor = GlobalColors.dark;
             StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         
         private void ClearTextBox()
@@ -123,6 +129,34 @@ namespace wardrobe
             TB_pass.BackColor = GlobalColors.lightBg;
             textBox2.BackColor = GlobalColors.lightBg;
         }
-        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+        Point lastPoint;
+        private void panelSingIn_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void panelSingIn_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
     }
 }

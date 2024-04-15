@@ -1,8 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System.Drawing;
+using System.Windows.Forms;
+using System.ComponentModel;
+using wardrobe;
 
 namespace wardrobe
 {
-    partial class reg
+    partial class privateOffice
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +36,16 @@ namespace wardrobe
         {
             this.SuspendLayout();
             // 
-            // reg
+            // privateOffice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 685);
-            this.Name = "reg";
-            this.Text = "reg";
+            this.ClientSize = new System.Drawing.Size(420, 844);
+            this.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
+            this.Name = "privateOffice";
+            this.Text = "privateOffice";
             this.ResumeLayout(false);
         }
 

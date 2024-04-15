@@ -70,6 +70,12 @@
     <Compile Include="persona.Designer.cs">
       <DependentUpon>persona.cs</DependentUpon>
     </Compile>
+    <Compile Include="privateOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="privateOffice.Designer.cs">
+      <DependentUpon>privateOffice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reg.cs">
@@ -87,6 +93,9 @@
     <EmbeddedResource Include="persona.resx">
       <DependentUpon>persona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="privateOffice.resx">
+      <DependentUpon>privateOffice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -96,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reg.resx">
+      <DependentUpon>reg.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

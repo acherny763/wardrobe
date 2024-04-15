@@ -23,3 +23,5 @@ C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
+C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.privateOffice.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources

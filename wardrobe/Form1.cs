@@ -33,6 +33,9 @@ namespace wardrobe
             if (TB_pass.Focused && TB_pass.Text == "Пароль")
             {
                 TB_pass.Text = "";
+                TB_pass.Text = "";
+                TB_pass.Text = "";
+                TB_pass.Text = "";
                 TB_pass.ForeColor = GlobalColors.white;
                 TB_pass.PasswordChar = '*';
             }

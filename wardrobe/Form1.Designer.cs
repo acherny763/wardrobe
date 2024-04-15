@@ -42,20 +42,23 @@ namespace wardrobe
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelSingIn = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelSingIn.SuspendLayout();
             this.SuspendLayout();
             // 
             // heading
             // 
             this.heading.AutoSize = true;
-            this.heading.Font = new System.Drawing.Font("Manrope", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.heading.ForeColor = System.Drawing.SystemColors.Window;
-            this.heading.Location = new System.Drawing.Point(20, 20);
+            this.heading.Location = new System.Drawing.Point(22, 61);
             this.heading.Margin = new System.Windows.Forms.Padding(0);
             this.heading.Name = "heading";
             this.heading.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.heading.Size = new System.Drawing.Size(229, 44);
+            this.heading.Size = new System.Drawing.Size(211, 37);
             this.heading.TabIndex = 2;
             this.heading.Text = "Авторизация";
             // 
@@ -64,14 +67,14 @@ namespace wardrobe
             this.TB_login.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.TB_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
             this.TB_login.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_login.Font = new System.Drawing.Font("Manrope SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TB_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TB_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
-            this.TB_login.Location = new System.Drawing.Point(50, 103);
+            this.TB_login.Location = new System.Drawing.Point(52, 144);
             this.TB_login.Margin = new System.Windows.Forms.Padding(20);
             this.TB_login.MaxLength = 25;
             this.TB_login.Name = "TB_login";
             this.TB_login.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TB_login.Size = new System.Drawing.Size(320, 26);
+            this.TB_login.Size = new System.Drawing.Size(320, 22);
             this.TB_login.TabIndex = 3;
             this.TB_login.Text = "Логин";
             this.TB_login.Click += new System.EventHandler(this.TB_login_Click);
@@ -84,13 +87,13 @@ namespace wardrobe
             this.TB_pass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.TB_pass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
             this.TB_pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_pass.Font = new System.Drawing.Font("Manrope SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TB_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TB_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
-            this.TB_pass.Location = new System.Drawing.Point(50, 169);
+            this.TB_pass.Location = new System.Drawing.Point(52, 210);
             this.TB_pass.Margin = new System.Windows.Forms.Padding(20);
             this.TB_pass.MaxLength = 20;
             this.TB_pass.Name = "TB_pass";
-            this.TB_pass.Size = new System.Drawing.Size(320, 26);
+            this.TB_pass.Size = new System.Drawing.Size(320, 22);
             this.TB_pass.TabIndex = 4;
             this.TB_pass.Text = "Пароль";
             this.TB_pass.Click += new System.EventHandler(this.TB_pass_Click);
@@ -103,7 +106,7 @@ namespace wardrobe
             this.BTN_log.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
             this.BTN_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_log.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(33)))));
-            this.BTN_log.Location = new System.Drawing.Point(30, 230);
+            this.BTN_log.Location = new System.Drawing.Point(32, 271);
             this.BTN_log.Name = "BTN_log";
             this.BTN_log.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
             this.BTN_log.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
@@ -121,7 +124,7 @@ namespace wardrobe
             this.BTN_reg.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(38)))));
             this.BTN_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_reg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(33)))));
-            this.BTN_reg.Location = new System.Drawing.Point(30, 297);
+            this.BTN_reg.Location = new System.Drawing.Point(32, 338);
             this.BTN_reg.Name = "BTN_reg";
             this.BTN_reg.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
             this.BTN_reg.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
@@ -140,7 +143,7 @@ namespace wardrobe
             this.textBox1.Enabled = false;
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
             this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(29, 89);
+            this.textBox1.Location = new System.Drawing.Point(31, 130);
             this.textBox1.Margin = new System.Windows.Forms.Padding(20);
             this.textBox1.MaxLength = 25;
             this.textBox1.MinimumSize = new System.Drawing.Size(360, 56);
@@ -158,7 +161,7 @@ namespace wardrobe
             this.textBox2.Enabled = false;
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
             this.textBox2.HideSelection = false;
-            this.textBox2.Location = new System.Drawing.Point(30, 155);
+            this.textBox2.Location = new System.Drawing.Point(32, 196);
             this.textBox2.Margin = new System.Windows.Forms.Padding(20, 15, 0, 16);
             this.textBox2.MaxLength = 20;
             this.textBox2.MinimumSize = new System.Drawing.Size(360, 56);
@@ -175,7 +178,7 @@ namespace wardrobe
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImageLocation = "";
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(345, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(347, 145);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
@@ -190,18 +193,43 @@ namespace wardrobe
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.ImageLocation = "";
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(345, 170);
+            this.pictureBox2.Location = new System.Drawing.Point(347, 211);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // panelSingIn
+            // 
+            this.panelSingIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelSingIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelSingIn.Controls.Add(this.label1);
+            this.panelSingIn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSingIn.Location = new System.Drawing.Point(0, 0);
+            this.panelSingIn.Name = "panelSingIn";
+            this.panelSingIn.Size = new System.Drawing.Size(420, 42);
+            this.panelSingIn.TabIndex = 11;
+            this.panelSingIn.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panelSingIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSingIn_MouseDown);
+            this.panelSingIn.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSingIn_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.label1.Location = new System.Drawing.Point(386, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(420, 383);
+            this.ClientSize = new System.Drawing.Size(420, 423);
+            this.Controls.Add(this.panelSingIn);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BTN_reg);
@@ -211,16 +239,23 @@ namespace wardrobe
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.heading);
-            this.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Гардероб ТПК";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelSingIn.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.Panel panelSingIn;
 
         private System.Windows.Forms.PictureBox pictureBox2;
 

@@ -23,3 +23,15 @@ C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
+E:\github\wardrobe\wardrobe\bin\Debug\wardrobe.exe.config
+E:\github\wardrobe\wardrobe\bin\Debug\wardrobe.pdb
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.AssemblyReference.cache
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.admin.resources
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.Form1.resources
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.persona.resources
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.Resources.resources
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.exe
+E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.pdb

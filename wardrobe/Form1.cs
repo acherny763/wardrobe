@@ -25,6 +25,7 @@ namespace wardrobe
             this.BackColor = GlobalColors.bg;
             this.Shown += Form1_Shown;
             heading.ForeColor = GlobalColors.white;
+            panelSingIn.ForeColor = GlobalColors.dark;
             StartPosition = FormStartPosition.CenterScreen;
         }
         
@@ -123,6 +124,34 @@ namespace wardrobe
             TB_pass.BackColor = GlobalColors.lightBg;
             textBox2.BackColor = GlobalColors.lightBg;
         }
-        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+        Point lastPoint;
+        private void panelSingIn_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void panelSingIn_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
     }
 }

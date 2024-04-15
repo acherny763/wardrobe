@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 namespace wardrobe
 {
 
     public partial class Form1 : Form
     {
         DataBase _dataBase = new DataBase();
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         private void Form1_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
@@ -27,6 +30,8 @@ namespace wardrobe
             heading.ForeColor = GlobalColors.white;
             panelSingIn.ForeColor = GlobalColors.dark;
             StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         
         private void ClearTextBox()

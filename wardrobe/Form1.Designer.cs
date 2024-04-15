@@ -42,8 +42,8 @@ namespace wardrobe
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelSingIn = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelSingIn = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSingIn.SuspendLayout();
@@ -200,6 +200,16 @@ namespace wardrobe
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.label1.Location = new System.Drawing.Point(386, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(22, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // panelSingIn
             // 
             this.panelSingIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -213,16 +223,6 @@ namespace wardrobe
             this.panelSingIn.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panelSingIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSingIn_MouseDown);
             this.panelSingIn.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSingIn_MouseMove);
-            // 
-            // label1
-            // 
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.label1.Location = new System.Drawing.Point(386, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 

@@ -20,7 +20,6 @@ C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.admin.resou
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.Form1.resources
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.persona.resources
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.Resources.resources
-C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete

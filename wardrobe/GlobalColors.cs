@@ -13,6 +13,7 @@ namespace wardrobe
         public static readonly Color blue = Color.FromArgb(40, 96, 241);
         public static readonly Color lightBlue = Color.FromArgb(227, 235, 255);
         public static readonly Color stroke = Color.FromArgb(13,188, 201, 219);
+        public static readonly Color stroke2 = Color.FromArgb(41, 46, 52);
         public static readonly Color lightBg = Color.FromArgb(34, 38, 44);
         public static readonly Color white = Color.FromArgb(241, 244, 248);
     }

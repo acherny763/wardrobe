@@ -118,10 +118,12 @@ namespace wardrobe
             {
                 TB_pass.Text = "Пароль";
                 TB_pass.ForeColor = GlobalColors.darkTxt;
+                TB_pass.PasswordChar = '\0';
             }
             
             TB_pass.BackColor = GlobalColors.lightBg;
             textBox2.BackColor = GlobalColors.lightBg;
         }
+        
     }
 }

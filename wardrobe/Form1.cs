@@ -20,7 +20,7 @@ namespace wardrobe
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
-        
+
         private readonly HeaderMouseMove _headerMouseMove = new HeaderMouseMove();
         
         private void Form1_Shown(object sender, EventArgs e)
@@ -32,15 +32,17 @@ namespace wardrobe
         {
             InitializeComponent();
 
-            this.BackColor = GlobalColors.bg;
+            this.BackColor = GlobalColors.Bg;
             this.Shown += Form1_Shown;
             
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            
-            LB_header.ForeColor = GlobalColors.txt;
-            heading.ForeColor = GlobalColors.white;
-            header.ForeColor = GlobalColors.dark;
+            textBox1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox1.Width, textBox1.Height, 16, 16));
+            textBox2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox2.Width, textBox2.Height, 16, 16));
+
+            LB_header.ForeColor = GlobalColors.Txt;
+            heading.ForeColor = GlobalColors.White;
+            header.ForeColor = GlobalColors.Dark;
             StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -49,14 +51,14 @@ namespace wardrobe
             if (TB_pass.Focused && TB_pass.Text == "Пароль")
             {
                 TB_pass.Text = "";
-                TB_pass.ForeColor = GlobalColors.white;
+                TB_pass.ForeColor = GlobalColors.White;
                 TB_pass.PasswordChar = '*';
             }
 
             if (TB_login.Focused && TB_login.Text == "Логин")
             {
                 TB_login.Text = "";
-                TB_login.ForeColor = GlobalColors.white;
+                TB_login.ForeColor = GlobalColors.White;
             }
         }
         private void TB_login_Click(object sender, EventArgs e)
@@ -101,16 +103,16 @@ namespace wardrobe
 
         private void TB_pass_Enter(object sender, EventArgs e)
         {
-            TB_pass.BackColor = GlobalColors.activeElem;
-            textBox2.BackColor = GlobalColors.activeElem;
+            TB_pass.BackColor = GlobalColors.ActiveElem;
+            textBox2.BackColor = GlobalColors.ActiveElem;
             
             ClearTextBox();
         }
 
         private void TB_login_Enter(object sender, EventArgs e)
         {
-            TB_login.BackColor = GlobalColors.activeElem;
-            textBox1.BackColor = GlobalColors.activeElem;
+            TB_login.BackColor = GlobalColors.ActiveElem;
+            textBox1.BackColor = GlobalColors.ActiveElem;
             
             ClearTextBox();
         }
@@ -120,11 +122,11 @@ namespace wardrobe
             if (TB_login.Text == "")
             {
                 TB_login.Text = "Логин";
-                TB_login.ForeColor = GlobalColors.darkTxt;
+                TB_login.ForeColor = GlobalColors.DarkTxt;
             }
             
-            TB_login.BackColor = GlobalColors.lightBg;
-            textBox1.BackColor = GlobalColors.lightBg;
+            TB_login.BackColor = GlobalColors.LightBg;
+            textBox1.BackColor = GlobalColors.LightBg;
         }
 
         private void TB_pass_Leave(object sender, EventArgs e)
@@ -132,12 +134,12 @@ namespace wardrobe
             if (TB_pass.Text == "")
             {
                 TB_pass.Text = "Пароль";
-                TB_pass.ForeColor = GlobalColors.darkTxt;
+                TB_pass.ForeColor = GlobalColors.DarkTxt;
                 TB_pass.PasswordChar = '\0';
             }
             
-            TB_pass.BackColor = GlobalColors.lightBg;
-            textBox2.BackColor = GlobalColors.lightBg;
+            TB_pass.BackColor = GlobalColors.LightBg;
+            textBox2.BackColor = GlobalColors.LightBg;
         }
 
         private void LB_close_Click(object sender, EventArgs e)

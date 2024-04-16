@@ -14,8 +14,8 @@ namespace ePOSOne.btnProduct
         private Color _onHoverTextColor = Color.Gray;
 
         private bool _isHovering;
-        private int _borderThickness = 6;
-        private int _borderThicknessByTwo = 3;
+        private int _borderThickness = 2;
+        private int _borderThicknessByTwo = 1;
 
 
         public Button_WOC()

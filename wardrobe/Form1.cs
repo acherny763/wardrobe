@@ -40,10 +40,7 @@ namespace wardrobe
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             textBox1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox1.Width, textBox1.Height, 24, 24));
             textBox2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox2.Width, textBox2.Height, 24, 24));
-            BTN_log.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BTN_log.Width, BTN_log.Height, 50, 50));
-            BTN_reg.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BTN_reg.Width, BTN_reg.Height, 50, 50));
-            TB_pass.KeyPress += TB_pass_KeyPress;
-            TB_login.KeyPress += TB_pass_KeyPress;
+            TB_login.KeyPress += TB_login_KeyPress;
 
             LB_header.ForeColor = GlobalColors.Txt;
             heading.ForeColor = GlobalColors.White;
@@ -85,7 +82,6 @@ namespace wardrobe
         {
             if (string.IsNullOrWhiteSpace(TB_login.Text) ||
                 string.IsNullOrWhiteSpace(TB_pass.Text) ||
-                /*TB_pass.Text="Логин"*/
                 TB_login.Text.Equals("Логин", StringComparison.OrdinalIgnoreCase) ||
                 TB_pass.Text.Equals("Пароль", StringComparison.OrdinalIgnoreCase)
                )
@@ -119,7 +115,7 @@ namespace wardrobe
                 }
             }
         }
-        private void TB_pass_KeyPress(object sender, KeyPressEventArgs e)
+        private void TB_login_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == ' ')
             {

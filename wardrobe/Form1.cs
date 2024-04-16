@@ -31,15 +31,16 @@ namespace wardrobe
         
         public Form1()
         {
+            //this.Shown += Form1_Shown;
+            
             InitializeComponent();
 
             this.BackColor = GlobalColors.Bg;
-            this.Shown += Form1_Shown;
-            
+
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            textBox1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox1.Width, textBox1.Height, 24, 24));
-            textBox2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox2.Width, textBox2.Height, 24, 24));
+            sheathLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, sheathLogin.Width, sheathLogin.Height, 24, 24));
+            sheathPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, sheathPassword.Width, sheathPassword.Height, 24, 24));
             TB_login.KeyPress += TB_login_KeyPress;
 
             LB_header.ForeColor = GlobalColors.Txt;
@@ -50,25 +51,20 @@ namespace wardrobe
 
         private void ClearTextBox()
         {
+            if (TB_login.Focused && TB_login.Text == "Логин")
+            {
+                TB_login.Text = "";
+                TB_login.ForeColor = GlobalColors.White;
+            }
+            
             if (TB_pass.Focused && TB_pass.Text == "Пароль")
             {
                 TB_pass.Text = "";
                 TB_pass.ForeColor = GlobalColors.White;
                 TB_pass.PasswordChar = '*';
             }
-
-            if (TB_login.Focused && TB_login.Text == "Логин")
-            {
-                TB_login.Text = "";
-                TB_login.ForeColor = GlobalColors.White;
-            }
         }
         private void TB_login_Click(object sender, EventArgs e)
-        {
-            ClearTextBox();
-        }
-        
-        private void TB_login_TextChanged(object sender, EventArgs e)
         {
             ClearTextBox();
         }
@@ -115,44 +111,47 @@ namespace wardrobe
                 }
             }
         }
-        private void TB_login_KeyPress(object sender, KeyPressEventArgs e)
+        private static void TB_login_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == ' ')
             {
-                e.Handled = true; // отменяем добавление пробела в текстбокс
+                e.Handled = true;
             }
         }
         private void TB_pass_Enter(object sender, EventArgs e)
         {
-            TB_pass.BackColor = GlobalColors.ActiveElem;
-            textBox2.BackColor = GlobalColors.ActiveElem;
-            
             ClearTextBox();
+            
+            TB_pass.BackColor = GlobalColors.ActiveElem;
+            sheathPassword.BackColor = GlobalColors.ActiveElem;
+            pictureBox2.BackColor = GlobalColors.ActiveElem;
         }
 
         private void TB_login_Enter(object sender, EventArgs e)
         {
-            TB_login.BackColor = GlobalColors.ActiveElem;
-            textBox1.BackColor = GlobalColors.ActiveElem;
-            
             ClearTextBox();
+            
+            TB_login.BackColor = GlobalColors.ActiveElem;
+            sheathLogin.BackColor = GlobalColors.ActiveElem;
+            pictureBox1.BackColor = GlobalColors.ActiveElem;
         }
 
         private void TB_login_Leave(object sender, EventArgs e)
         {
-            if (TB_login.Text == "")
+            if (string.IsNullOrWhiteSpace(TB_login.Text))
             {
                 TB_login.Text = "Логин";
                 TB_login.ForeColor = GlobalColors.DarkTxt;
             }
             
             TB_login.BackColor = GlobalColors.LightBg;
-            textBox1.BackColor = GlobalColors.LightBg;
+            sheathLogin.BackColor = GlobalColors.LightBg;
+            pictureBox1.BackColor = GlobalColors.LightBg;
         }
 
         private void TB_pass_Leave(object sender, EventArgs e)
         {
-            if (TB_pass.Text == "")
+            if (string.IsNullOrWhiteSpace(TB_pass.Text))
             {
                 TB_pass.Text = "Пароль";
                 TB_pass.ForeColor = GlobalColors.DarkTxt;
@@ -160,7 +159,8 @@ namespace wardrobe
             }
             
             TB_pass.BackColor = GlobalColors.LightBg;
-            textBox2.BackColor = GlobalColors.LightBg;
+            sheathPassword.BackColor = GlobalColors.LightBg;
+            pictureBox2.BackColor = GlobalColors.LightBg;
         }
 
         private void LB_close_Click(object sender, EventArgs e)
@@ -191,6 +191,16 @@ namespace wardrobe
         private void LB_header_MouseDown(object sender, MouseEventArgs e)
         {
             _headerMouseMove.SetLastPoint(e);
+        }
+
+        private void sheathLogin_Click(object sender, EventArgs e)
+        {
+            TB_login.Focus();
+        }
+
+        private void sheathPassword_Click(object sender, EventArgs e)
+        {
+            TB_pass.Focus();
         }
     }
 }

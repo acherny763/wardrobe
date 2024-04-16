@@ -38,8 +38,8 @@ namespace wardrobe
             this.TB_pass = new System.Windows.Forms.TextBox();
             this.BTN_log = new ePOSOne.btnProduct.Button_WOC();
             this.BTN_reg = new ePOSOne.btnProduct.Button_WOC();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sheathLogin = new System.Windows.Forms.TextBox();
+            this.sheathPassword = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LB_close = new System.Windows.Forms.Label();
@@ -80,7 +80,6 @@ namespace wardrobe
             this.TB_login.TabIndex = 3;
             this.TB_login.Text = "Логин";
             this.TB_login.Click += new System.EventHandler(this.TB_login_Click);
-            this.TB_login.TextChanged += new System.EventHandler(this.TB_login_TextChanged);
             this.TB_login.Enter += new System.EventHandler(this.TB_login_Enter);
             this.TB_login.Leave += new System.EventHandler(this.TB_login_Leave);
             // 
@@ -136,40 +135,42 @@ namespace wardrobe
             this.BTN_reg.TextColor = System.Drawing.Color.White;
             this.BTN_reg.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // sheathLogin
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(31, 130);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(20);
-            this.textBox1.MaxLength = 25;
-            this.textBox1.MinimumSize = new System.Drawing.Size(360, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(360, 56);
-            this.textBox1.TabIndex = 7;
+            this.sheathLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
+            this.sheathLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
+            this.sheathLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sheathLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.sheathLogin.HideSelection = false;
+            this.sheathLogin.Location = new System.Drawing.Point(31, 130);
+            this.sheathLogin.Margin = new System.Windows.Forms.Padding(20);
+            this.sheathLogin.MaxLength = 25;
+            this.sheathLogin.MinimumSize = new System.Drawing.Size(360, 56);
+            this.sheathLogin.Name = "sheathLogin";
+            this.sheathLogin.ReadOnly = true;
+            this.sheathLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.sheathLogin.Size = new System.Drawing.Size(360, 56);
+            this.sheathLogin.TabIndex = 7;
+            this.sheathLogin.TabStop = false;
+            this.sheathLogin.Click += new System.EventHandler(this.sheathLogin_Click);
             // 
-            // textBox2
+            // sheathPassword
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Enabled = false;
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.textBox2.HideSelection = false;
-            this.textBox2.Location = new System.Drawing.Point(32, 196);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(20, 15, 0, 16);
-            this.textBox2.MaxLength = 20;
-            this.textBox2.MinimumSize = new System.Drawing.Size(360, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(360, 56);
-            this.textBox2.TabIndex = 8;
+            this.sheathPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
+            this.sheathPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
+            this.sheathPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.sheathPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.sheathPassword.HideSelection = false;
+            this.sheathPassword.Location = new System.Drawing.Point(32, 196);
+            this.sheathPassword.Margin = new System.Windows.Forms.Padding(20, 15, 0, 16);
+            this.sheathPassword.MaxLength = 20;
+            this.sheathPassword.MinimumSize = new System.Drawing.Size(360, 56);
+            this.sheathPassword.Name = "sheathPassword";
+            this.sheathPassword.ReadOnly = true;
+            this.sheathPassword.Size = new System.Drawing.Size(360, 56);
+            this.sheathPassword.TabIndex = 8;
+            this.sheathPassword.TabStop = false;
+            this.sheathPassword.Click += new System.EventHandler(this.sheathPassword_Click);
             // 
             // pictureBox1
             // 
@@ -267,8 +268,8 @@ namespace wardrobe
             this.Controls.Add(this.BTN_log);
             this.Controls.Add(this.TB_pass);
             this.Controls.Add(this.TB_login);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.sheathLogin);
+            this.Controls.Add(this.sheathPassword);
             this.Controls.Add(this.heading);
             this.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -296,9 +297,9 @@ namespace wardrobe
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox sheathPassword;
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox sheathLogin;
 
         private ePOSOne.btnProduct.Button_WOC BTN_reg;
 

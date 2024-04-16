@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,10 @@ namespace wardrobe
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             textBox1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox1.Width, textBox1.Height, 24, 24));
             textBox2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox2.Width, textBox2.Height, 24, 24));
+            BTN_log.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BTN_log.Width, BTN_log.Height, 50, 50));
+            BTN_reg.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BTN_reg.Width, BTN_reg.Height, 50, 50));
+            TB_pass.KeyPress += TB_pass_KeyPress;
+            TB_login.KeyPress += TB_pass_KeyPress;
 
             LB_header.ForeColor = GlobalColors.Txt;
             heading.ForeColor = GlobalColors.White;
@@ -78,29 +83,49 @@ namespace wardrobe
 
         private void BTN_log_Click(object sender, EventArgs e)
         {
-            var login = TB_login.Text;
-            var password = TB_pass.Text;
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-
-            string query = $"SELECT id_user, login, password FROM users_data WHERE login = '{login}' AND password = '{password}'";
-
-            SqlCommand sqlCommand = new SqlCommand(query, _dataBase.getConnection());
-
-            adapter.SelectCommand = sqlCommand;
-            adapter.Fill(table);
-
-            if (table.Rows.Count == 1)
+            if (string.IsNullOrWhiteSpace(TB_login.Text) ||
+                string.IsNullOrWhiteSpace(TB_pass.Text) ||
+                /*TB_pass.Text="Логин"*/
+                TB_login.Text.Equals("Логин", StringComparison.OrdinalIgnoreCase) ||
+                TB_pass.Text.Equals("Пароль", StringComparison.OrdinalIgnoreCase)
+               )
             {
-                MessageBox.Show("Вы успешно вошли!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Заполните все поля!");
             }
             else
             {
-                MessageBox.Show("Такого акканта не существует", "Неуспешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var login = TB_login.Text;
+                var password = TB_pass.Text;
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataTable table = new DataTable();
+
+                string query =
+                    $"SELECT id_user, login, password FROM users_data WHERE login = '{login}' AND password = '{password}'";
+
+                SqlCommand sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+
+                adapter.SelectCommand = sqlCommand;
+                adapter.Fill(table);
+
+                if (table.Rows.Count == 1)
+                {
+                    MessageBox.Show("Вы успешно вошли!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Такого акканта не существует", "Неуспешно", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
             }
         }
-
+        private void TB_pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // отменяем добавление пробела в текстбокс
+            }
+        }
         private void TB_pass_Enter(object sender, EventArgs e)
         {
             TB_pass.BackColor = GlobalColors.ActiveElem;

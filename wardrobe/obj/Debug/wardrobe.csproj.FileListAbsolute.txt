@@ -25,3 +25,17 @@ C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.Core
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.privateOffice.resources
 C:\Users\san4e\OneDrive\Desktop\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources
+E:\github\gar\wardrobe\wardrobe\bin\Debug\wardrobe.exe.config
+E:\github\gar\wardrobe\wardrobe\bin\Debug\wardrobe.pdb
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.AssemblyReference.cache
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.admin.resources
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.Form1.resources
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.persona.resources
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.privateOffice.resources
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.Resources.resources
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.exe
+E:\github\gar\wardrobe\wardrobe\obj\Debug\wardrobe.pdb

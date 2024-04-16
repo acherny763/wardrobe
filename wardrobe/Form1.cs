@@ -17,7 +17,7 @@ namespace wardrobe
     public partial class Form1 : Form
     {
         private readonly DataBase _dataBase = new DataBase();
-        
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         

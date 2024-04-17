@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace wardrobe
 {
@@ -7,6 +8,11 @@ namespace wardrobe
         public reg()
         {
             InitializeComponent();
+        }
+
+        private void reg_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

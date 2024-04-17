@@ -63,6 +63,7 @@
     <Compile Include="admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUtilities.cs" />
     <Compile Include="GlobalColors.cs" />
     <Compile Include="headerMouseMove.cs" />
     <Compile Include="persona.cs">

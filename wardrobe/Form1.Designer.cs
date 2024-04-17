@@ -212,7 +212,6 @@ namespace wardrobe
             this.LB_close.Size = new System.Drawing.Size(22, 22);
             this.LB_close.TabIndex = 0;
             this.LB_close.Text = "×";
-            this.LB_close.Click += new System.EventHandler(this.LB_close_Click);
             // 
             // header
             // 
@@ -239,7 +238,6 @@ namespace wardrobe
             this.LB_roll.Size = new System.Drawing.Size(22, 22);
             this.LB_roll.TabIndex = 13;
             this.LB_roll.Text = "—";
-            this.LB_roll.Click += new System.EventHandler(this.LB_roll_Click);
             // 
             // LB_header
             // 

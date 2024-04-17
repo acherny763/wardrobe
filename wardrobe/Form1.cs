@@ -34,6 +34,9 @@ namespace wardrobe
             //this.Shown += Form1_Shown;
             
             InitializeComponent();
+            
+            FormUtilities.CloseForm(this, "LB_close");
+            FormUtilities.MinimizeForm(this, "LB_roll");
 
             this.BackColor = GlobalColors.Bg;
 
@@ -61,7 +64,7 @@ namespace wardrobe
             {
                 TB_pass.Text = "";
                 TB_pass.ForeColor = GlobalColors.White;
-                TB_pass.PasswordChar = '*';
+                TB_pass.PasswordChar = '•';
             }
         }
         private void TB_login_Click(object sender, EventArgs e)
@@ -161,16 +164,6 @@ namespace wardrobe
             TB_pass.BackColor = GlobalColors.LightBg;
             sheathPassword.BackColor = GlobalColors.LightBg;
             pictureBox2.BackColor = GlobalColors.LightBg;
-        }
-
-        private void LB_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        
-        private void LB_roll_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
         
         private void panelSignIn_MouseMove(object sender, MouseEventArgs e)

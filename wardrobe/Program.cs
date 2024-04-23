@@ -18,7 +18,7 @@ namespace wardrobe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConfirmationForm());
+            Application.Run(new persona());
         }
     }
 }

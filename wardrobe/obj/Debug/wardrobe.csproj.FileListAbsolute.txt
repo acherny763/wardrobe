@@ -67,3 +67,4 @@ E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cach
 E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
 E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.exe
 E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.pdb
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.ConfirmationForm.resources

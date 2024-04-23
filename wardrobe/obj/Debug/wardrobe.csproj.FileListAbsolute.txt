@@ -53,3 +53,17 @@ E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
 E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
 E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.exe
 E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.pdb
+E:\github\war\wardrobe\wardrobe\bin\Debug\wardrobe.exe.config
+E:\github\war\wardrobe\wardrobe\bin\Debug\wardrobe.pdb
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.AssemblyReference.cache
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.admin.resources
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.Form1.resources
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.persona.resources
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.privateOffice.resources
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.Resources.resources
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.exe
+E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.pdb

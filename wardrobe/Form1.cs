@@ -195,5 +195,10 @@ namespace wardrobe
         {
             TB_pass.Focus();
         }
+
+        private void LB_close_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

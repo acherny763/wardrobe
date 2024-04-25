@@ -17,13 +17,15 @@ namespace wardrobe
     public partial class Persona : Form
     {
         private readonly DataBase _dataBase = new DataBase();
+        private int _userId;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         private readonly HeaderMouseMove _headerMouseMove = new HeaderMouseMove();
         
-        public Persona()
+        public Persona(int userId)
         {
+            _userId = userId;
             InitializeComponent();
             SetTableSettings();
 
@@ -175,9 +177,10 @@ namespace wardrobe
             DataBase.openConnection();
             
             var query =
-                $"SELECT a.name from users a, users_data b where a.id = b.id_user";
-            
+                $"SELECT a.name FROM users a JOIN users_data b ON a.id = b.id_user WHERE b.id_user = @UserId";
+
             var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+            sqlCommand.Parameters.AddWithValue("@UserId", _userId);
             var result = sqlCommand.ExecuteScalar();
             
             LB_userName.Text = result != null ? result.ToString() : "Имя не найдено";

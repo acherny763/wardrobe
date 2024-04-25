@@ -79,7 +79,8 @@ namespace wardrobe
             
                 if (table.Rows.Count == 1)
                 {
-                    var personaForm = new Persona();
+                    var userId = Convert.ToInt32(table.Rows[0]["id_user"]);
+                    var personaForm = new Persona(userId);
                     this.Hide();
                     personaForm.Show();
                 }

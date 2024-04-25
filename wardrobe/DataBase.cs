@@ -13,7 +13,7 @@ namespace wardrobe
 {
     public class DataBase
     {
-        private string vladDB = "WIN-JT56SL0IR1J";
+        private static string vladDB = "WIN-JT56SL0IR1J";
         private static string sashaDB = "DESKTOP-KSHLJ2B";
 
         static SqlConnection sqlConnection = new SqlConnection($@"Data Source = {sashaDB}; Initial Catalog = wardrobe; Integrated Security = True");

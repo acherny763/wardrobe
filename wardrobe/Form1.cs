@@ -23,18 +23,14 @@ namespace wardrobe
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
 
         private readonly HeaderMouseMove _headerMouseMove = new HeaderMouseMove();
-        
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
-        }
-        
+
         public Form1()
         {
-            //this.Shown += Form1_Shown;
-            
             InitializeComponent();
-            
+
+            TextBoxManipulation.AttachEnterEventToTextBoxes(this);
+            TextBoxManipulation.ChangeColorPanel(this);
+
             FormUtilities.CloseForm(this, "LB_close");
             FormUtilities.MinimizeForm(this, "LB_roll");
 
@@ -42,9 +38,6 @@ namespace wardrobe
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            sheathLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, sheathLogin.Width, sheathLogin.Height, 24, 24));
-            sheathPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, sheathPassword.Width, sheathPassword.Height, 24, 24));
-            TB_login.KeyPress += TB_login_KeyPress;
 
             LB_header.ForeColor = GlobalColors.Txt;
             heading.ForeColor = GlobalColors.White;
@@ -52,29 +45,10 @@ namespace wardrobe
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void ClearTextBox()
+        public sealed override Color BackColor
         {
-            if (TB_login.Focused && TB_login.Text == "Логин")
-            {
-                TB_login.Text = "";
-                TB_login.ForeColor = GlobalColors.White;
-            }
-            
-            if (TB_pass.Focused && TB_pass.Text == "Пароль")
-            {
-                TB_pass.Text = "";
-                TB_pass.ForeColor = GlobalColors.White;
-                TB_pass.PasswordChar = '•';
-            }
-        }
-        private void TB_login_Click(object sender, EventArgs e)
-        {
-            ClearTextBox();
-        }
-
-        private void TB_pass_Click(object sender, EventArgs e)
-        {
-            ClearTextBox();
+            get => base.BackColor;
+            set => base.BackColor = value;
         }
 
         private void BTN_log_Click(object sender, EventArgs e)
@@ -91,21 +65,23 @@ namespace wardrobe
             {
                 var login = TB_login.Text;
                 var password = TB_pass.Text;
-
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                DataTable table = new DataTable();
-
-                string query =
+            
+                var adapter = new SqlDataAdapter();
+                var table = new DataTable();
+            
+                var query =
                     $"SELECT id_user, login, password FROM users_data WHERE login = '{login}' AND password = '{password}'";
-
-                SqlCommand sqlCommand = new SqlCommand(query, _dataBase.getConnection());
-
+            
+                var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+            
                 adapter.SelectCommand = sqlCommand;
                 adapter.Fill(table);
-
+            
                 if (table.Rows.Count == 1)
                 {
-                    MessageBox.Show("Вы успешно вошли!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var personaForm = new Persona();
+                    this.Hide();
+                    personaForm.Show();
                 }
                 else
                 {
@@ -113,59 +89,11 @@ namespace wardrobe
                         MessageBoxIcon.Information);
                 }
             }
-        }
-        private static void TB_login_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == ' ')
-            {
-                e.Handled = true;
-            }
-        }
-        private void TB_pass_Enter(object sender, EventArgs e)
-        {
-            ClearTextBox();
-            
-            TB_pass.BackColor = GlobalColors.ActiveElem;
-            sheathPassword.BackColor = GlobalColors.ActiveElem;
-            pictureBox2.BackColor = GlobalColors.ActiveElem;
+
+            if (!string.IsNullOrWhiteSpace(TB_login.Text) && !string.IsNullOrWhiteSpace(TB_pass.Text)) return;
+            MessageBox.Show("Заполните все поля!");
         }
 
-        private void TB_login_Enter(object sender, EventArgs e)
-        {
-            ClearTextBox();
-            
-            TB_login.BackColor = GlobalColors.ActiveElem;
-            sheathLogin.BackColor = GlobalColors.ActiveElem;
-            pictureBox1.BackColor = GlobalColors.ActiveElem;
-        }
-
-        private void TB_login_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TB_login.Text))
-            {
-                TB_login.Text = "Логин";
-                TB_login.ForeColor = GlobalColors.DarkTxt;
-            }
-            
-            TB_login.BackColor = GlobalColors.LightBg;
-            sheathLogin.BackColor = GlobalColors.LightBg;
-            pictureBox1.BackColor = GlobalColors.LightBg;
-        }
-
-        private void TB_pass_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TB_pass.Text))
-            {
-                TB_pass.Text = "Пароль";
-                TB_pass.ForeColor = GlobalColors.DarkTxt;
-                TB_pass.PasswordChar = '\0';
-            }
-            
-            TB_pass.BackColor = GlobalColors.LightBg;
-            sheathPassword.BackColor = GlobalColors.LightBg;
-            pictureBox2.BackColor = GlobalColors.LightBg;
-        }
-        
         private void panelSignIn_MouseMove(object sender, MouseEventArgs e)
         {
             _headerMouseMove.MoveForm(e, this);
@@ -186,19 +114,11 @@ namespace wardrobe
             _headerMouseMove.SetLastPoint(e);
         }
 
-        private void sheathLogin_Click(object sender, EventArgs e)
+        private void BTN_reg_Click(object sender, EventArgs e)
         {
-            TB_login.Focus();
-        }
-
-        private void sheathPassword_Click(object sender, EventArgs e)
-        {
-            TB_pass.Focus();
-        }
-
-        private void LB_close_Click(object sender, EventArgs e)
-        {
-            
+            var regForm = new Reg();
+            this.Hide();
+            regForm.Show();
         }
     }
 }

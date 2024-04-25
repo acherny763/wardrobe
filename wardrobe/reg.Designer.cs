@@ -2,7 +2,7 @@
 
 namespace wardrobe
 {
-    partial class reg
+    partial class Reg
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace wardrobe
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reg));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reg));
             this.BTN_reg = new ePOSOne.btnProduct.Button_WOC();
             this.BTN_log = new ePOSOne.btnProduct.Button_WOC();
             this.header = new System.Windows.Forms.Panel();
@@ -414,6 +414,7 @@ namespace wardrobe
             this.BTN_signUp.Text = "Уже есть аккаунт";
             this.BTN_signUp.TextColor = System.Drawing.Color.White;
             this.BTN_signUp.UseVisualStyleBackColor = true;
+            this.BTN_signUp.Click += new System.EventHandler(this.BTN_signUp_Click);
             // 
             // BTN_registration
             // 
@@ -496,7 +497,7 @@ namespace wardrobe
             this.PN_numberGroup.Size = new System.Drawing.Size(360, 56);
             this.PN_numberGroup.TabIndex = 139;
             // 
-            // reg
+            // Reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -535,7 +536,7 @@ namespace wardrobe
             this.Location = new System.Drawing.Point(15, 15);
             this.Margin = new System.Windows.Forms.Padding(11);
             this.MaximizeBox = false;
-            this.Name = "reg";
+            this.Name = "Reg";
             this.Load += new System.EventHandler(this.reg_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();

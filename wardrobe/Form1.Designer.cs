@@ -38,14 +38,14 @@ namespace wardrobe
             this.TB_pass = new System.Windows.Forms.TextBox();
             this.BTN_log = new ePOSOne.btnProduct.Button_WOC();
             this.BTN_reg = new ePOSOne.btnProduct.Button_WOC();
-            this.sheathLogin = new System.Windows.Forms.TextBox();
-            this.sheathPassword = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LB_close = new System.Windows.Forms.Label();
             this.header = new System.Windows.Forms.Panel();
             this.LB_roll = new System.Windows.Forms.Label();
             this.LB_header = new System.Windows.Forms.Label();
+            this.PN_login = new System.Windows.Forms.Panel();
+            this.PN_pass = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.header.SuspendLayout();
@@ -79,9 +79,6 @@ namespace wardrobe
             this.TB_login.Size = new System.Drawing.Size(320, 26);
             this.TB_login.TabIndex = 3;
             this.TB_login.Text = "Логин";
-            this.TB_login.Click += new System.EventHandler(this.TB_login_Click);
-            this.TB_login.Enter += new System.EventHandler(this.TB_login_Enter);
-            this.TB_login.Leave += new System.EventHandler(this.TB_login_Leave);
             // 
             // TB_pass
             // 
@@ -96,14 +93,12 @@ namespace wardrobe
             this.TB_pass.Size = new System.Drawing.Size(320, 25);
             this.TB_pass.TabIndex = 4;
             this.TB_pass.Text = "Пароль";
-            this.TB_pass.Click += new System.EventHandler(this.TB_pass_Click);
-            this.TB_pass.Enter += new System.EventHandler(this.TB_pass_Enter);
-            this.TB_pass.Leave += new System.EventHandler(this.TB_pass_Leave);
             // 
             // BTN_log
             // 
             this.BTN_log.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
             this.BTN_log.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
+            this.BTN_log.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_log.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(33)))));
             this.BTN_log.Location = new System.Drawing.Point(32, 271);
@@ -122,6 +117,7 @@ namespace wardrobe
             // 
             this.BTN_reg.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
             this.BTN_reg.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(38)))));
+            this.BTN_reg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_reg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(33)))));
             this.BTN_reg.Location = new System.Drawing.Point(32, 338);
@@ -134,43 +130,7 @@ namespace wardrobe
             this.BTN_reg.Text = "Зарегистрироваться";
             this.BTN_reg.TextColor = System.Drawing.Color.White;
             this.BTN_reg.UseVisualStyleBackColor = true;
-            // 
-            // sheathLogin
-            // 
-            this.sheathLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
-            this.sheathLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.sheathLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.sheathLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.sheathLogin.HideSelection = false;
-            this.sheathLogin.Location = new System.Drawing.Point(31, 130);
-            this.sheathLogin.Margin = new System.Windows.Forms.Padding(20);
-            this.sheathLogin.MaxLength = 25;
-            this.sheathLogin.MinimumSize = new System.Drawing.Size(360, 56);
-            this.sheathLogin.Name = "sheathLogin";
-            this.sheathLogin.ReadOnly = true;
-            this.sheathLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sheathLogin.Size = new System.Drawing.Size(360, 56);
-            this.sheathLogin.TabIndex = 7;
-            this.sheathLogin.TabStop = false;
-            this.sheathLogin.Click += new System.EventHandler(this.sheathLogin_Click);
-            // 
-            // sheathPassword
-            // 
-            this.sheathPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
-            this.sheathPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.sheathPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.sheathPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.sheathPassword.HideSelection = false;
-            this.sheathPassword.Location = new System.Drawing.Point(32, 196);
-            this.sheathPassword.Margin = new System.Windows.Forms.Padding(20, 15, 0, 16);
-            this.sheathPassword.MaxLength = 20;
-            this.sheathPassword.MinimumSize = new System.Drawing.Size(360, 56);
-            this.sheathPassword.Name = "sheathPassword";
-            this.sheathPassword.ReadOnly = true;
-            this.sheathPassword.Size = new System.Drawing.Size(360, 56);
-            this.sheathPassword.TabIndex = 8;
-            this.sheathPassword.TabStop = false;
-            this.sheathPassword.Click += new System.EventHandler(this.sheathPassword_Click);
+            this.BTN_reg.Click += new System.EventHandler(this.BTN_reg_Click);
             // 
             // pictureBox1
             // 
@@ -212,7 +172,6 @@ namespace wardrobe
             this.LB_close.Size = new System.Drawing.Size(22, 22);
             this.LB_close.TabIndex = 0;
             this.LB_close.Text = "×";
-            this.LB_close.Click += new System.EventHandler(this.LB_close_Click);
             // 
             // header
             // 
@@ -255,6 +214,20 @@ namespace wardrobe
             this.LB_header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_header_MouseDown);
             this.LB_header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_header_MouseMove);
             // 
+            // PN_login
+            // 
+            this.PN_login.Location = new System.Drawing.Point(32, 130);
+            this.PN_login.Name = "PN_login";
+            this.PN_login.Size = new System.Drawing.Size(360, 57);
+            this.PN_login.TabIndex = 12;
+            // 
+            // PN_pass
+            // 
+            this.PN_pass.Location = new System.Drawing.Point(32, 196);
+            this.PN_pass.Name = "PN_pass";
+            this.PN_pass.Size = new System.Drawing.Size(360, 56);
+            this.PN_pass.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -267,9 +240,9 @@ namespace wardrobe
             this.Controls.Add(this.BTN_log);
             this.Controls.Add(this.TB_pass);
             this.Controls.Add(this.TB_login);
-            this.Controls.Add(this.sheathLogin);
-            this.Controls.Add(this.sheathPassword);
             this.Controls.Add(this.heading);
+            this.Controls.Add(this.PN_pass);
+            this.Controls.Add(this.PN_login);
             this.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -284,6 +257,9 @@ namespace wardrobe
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Panel PN_login;
+        private System.Windows.Forms.Panel PN_pass;
+
         private System.Windows.Forms.Label LB_roll;
 
         private System.Windows.Forms.Label LB_header;
@@ -295,10 +271,6 @@ namespace wardrobe
         private System.Windows.Forms.PictureBox pictureBox2;
 
         private System.Windows.Forms.PictureBox pictureBox1;
-
-        private System.Windows.Forms.TextBox sheathPassword;
-
-        private System.Windows.Forms.TextBox sheathLogin;
 
         private ePOSOne.btnProduct.Button_WOC BTN_reg;
 

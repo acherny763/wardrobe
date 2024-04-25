@@ -1,6 +1,6 @@
 ﻿namespace wardrobe
 {
-    partial class persona
+    partial class Persona
     {
         /// <summary>
         /// Required designer variable.
@@ -54,8 +54,16 @@
             this.BTN_30 = new System.Windows.Forms.Button();
             this.BTN_7 = new System.Windows.Forms.Button();
             this.BTN_1 = new System.Windows.Forms.Button();
+            this.PN_countDays = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.LB_userName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_number)).BeginInit();
             this.header.SuspendLayout();
+            this.PN_countDays.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTN_occupied
@@ -63,7 +71,7 @@
             this.BTN_occupied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_occupied.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_occupied.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_occupied.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_occupied.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_occupied.ForeColor = System.Drawing.SystemColors.Window;
             this.BTN_occupied.Location = new System.Drawing.Point(255, 192);
             this.BTN_occupied.Name = "BTN_occupied";
@@ -90,7 +98,7 @@
             this.LB_expire.AutoSize = true;
             this.LB_expire.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LB_expire.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.LB_expire.Location = new System.Drawing.Point(200, 101);
+            this.LB_expire.Location = new System.Drawing.Point(210, 101);
             this.LB_expire.Margin = new System.Windows.Forms.Padding(0);
             this.LB_expire.Name = "LB_expire";
             this.LB_expire.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -103,7 +111,7 @@
             this.LB_num.AutoSize = true;
             this.LB_num.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LB_num.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.LB_num.Location = new System.Drawing.Point(30, 101);
+            this.LB_num.Location = new System.Drawing.Point(25, 101);
             this.LB_num.Margin = new System.Windows.Forms.Padding(0);
             this.LB_num.Name = "LB_num";
             this.LB_num.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -116,7 +124,7 @@
             this.LB_hi.AutoSize = true;
             this.LB_hi.Font = new System.Drawing.Font("Manrope", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LB_hi.ForeColor = System.Drawing.SystemColors.Window;
-            this.LB_hi.Location = new System.Drawing.Point(23, 50);
+            this.LB_hi.Location = new System.Drawing.Point(22, 50);
             this.LB_hi.Margin = new System.Windows.Forms.Padding(0);
             this.LB_hi.Name = "LB_hi";
             this.LB_hi.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -140,7 +148,7 @@
             this.BTN_free.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_free.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_free.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_free.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_free.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_free.ForeColor = System.Drawing.SystemColors.Window;
             this.BTN_free.Location = new System.Drawing.Point(108, 192);
             this.BTN_free.Name = "BTN_free";
@@ -165,7 +173,7 @@
             this.LB_countDays.AutoSize = true;
             this.LB_countDays.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LB_countDays.ForeColor = System.Drawing.SystemColors.Window;
-            this.LB_countDays.Location = new System.Drawing.Point(108, 517);
+            this.LB_countDays.Location = new System.Drawing.Point(22, 517);
             this.LB_countDays.Margin = new System.Windows.Forms.Padding(0);
             this.LB_countDays.Name = "LB_countDays";
             this.LB_countDays.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -178,7 +186,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(41, 627);
+            this.button2.Location = new System.Drawing.Point(30, 627);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(360, 1);
             this.button2.TabIndex = 135;
@@ -190,9 +198,9 @@
             this.BTN_signUp.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(38)))));
             this.BTN_signUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_signUp.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_signUp.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_signUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.BTN_signUp.Location = new System.Drawing.Point(39, 733);
+            this.BTN_signUp.Location = new System.Drawing.Point(30, 733);
             this.BTN_signUp.Name = "BTN_signUp";
             this.BTN_signUp.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
             this.BTN_signUp.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
@@ -209,9 +217,9 @@
             this.BTN_registration.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
             this.BTN_registration.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BTN_registration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_registration.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_registration.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_registration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.BTN_registration.Location = new System.Drawing.Point(39, 667);
+            this.BTN_registration.Location = new System.Drawing.Point(30, 667);
             this.BTN_registration.Name = "BTN_registration";
             this.BTN_registration.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
             this.BTN_registration.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
@@ -227,7 +235,7 @@
             this.BTN_all.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.BTN_all.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_all.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_all.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_all.ForeColor = System.Drawing.SystemColors.Window;
             this.BTN_all.Location = new System.Drawing.Point(30, 192);
             this.BTN_all.Name = "BTN_all";
@@ -306,6 +314,8 @@
             this.LB_header.Size = new System.Drawing.Size(114, 21);
             this.LB_header.TabIndex = 12;
             this.LB_header.Text = "Гардероб ТПК";
+            this.LB_header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LB_header_MouseDown);
+            this.LB_header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LB_header_MouseMove);
             // 
             // header
             // 
@@ -346,51 +356,97 @@
             // 
             // BTN_30
             // 
+            this.BTN_30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.BTN_30.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_30.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_30.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_30.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTN_30.Location = new System.Drawing.Point(291, 564);
+            this.BTN_30.Location = new System.Drawing.Point(270, 564);
             this.BTN_30.Name = "BTN_30";
             this.BTN_30.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BTN_30.Size = new System.Drawing.Size(110, 39);
+            this.BTN_30.Size = new System.Drawing.Size(120, 52);
             this.BTN_30.TabIndex = 129;
             this.BTN_30.Text = "30";
-            this.BTN_30.UseVisualStyleBackColor = true;
+            this.BTN_30.UseVisualStyleBackColor = false;
             // 
             // BTN_7
             // 
+            this.BTN_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.BTN_7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_7.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_7.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_7.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTN_7.Location = new System.Drawing.Point(162, 564);
+            this.BTN_7.Location = new System.Drawing.Point(150, 564);
             this.BTN_7.Name = "BTN_7";
-            this.BTN_7.Size = new System.Drawing.Size(110, 39);
+            this.BTN_7.Size = new System.Drawing.Size(120, 52);
             this.BTN_7.TabIndex = 132;
             this.BTN_7.Text = "7";
-            this.BTN_7.UseVisualStyleBackColor = true;
+            this.BTN_7.UseVisualStyleBackColor = false;
             // 
             // BTN_1
             // 
             this.BTN_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.BTN_1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.BTN_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_1.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_1.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.BTN_1.ForeColor = System.Drawing.SystemColors.Window;
             this.BTN_1.Location = new System.Drawing.Point(30, 564);
             this.BTN_1.Name = "BTN_1";
-            this.BTN_1.Size = new System.Drawing.Size(110, 39);
+            this.BTN_1.Size = new System.Drawing.Size(120, 52);
             this.BTN_1.TabIndex = 131;
             this.BTN_1.Text = "1";
             this.BTN_1.UseVisualStyleBackColor = false;
             // 
-            // persona
+            // PN_countDays
+            // 
+            this.PN_countDays.Controls.Add(this.panel1);
+            this.PN_countDays.Location = new System.Drawing.Point(30, 564);
+            this.PN_countDays.Name = "PN_countDays";
+            this.PN_countDays.Size = new System.Drawing.Size(360, 52);
+            this.PN_countDays.TabIndex = 141;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(360, 52);
+            this.panel1.TabIndex = 142;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(8, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(360, 52);
+            this.panel2.TabIndex = 142;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(8, 8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(360, 52);
+            this.panel3.TabIndex = 143;
+            // 
+            // LB_userName
+            // 
+            this.LB_userName.AutoSize = true;
+            this.LB_userName.Font = new System.Drawing.Font("Manrope", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LB_userName.ForeColor = System.Drawing.SystemColors.Window;
+            this.LB_userName.Location = new System.Drawing.Point(162, 50);
+            this.LB_userName.Margin = new System.Windows.Forms.Padding(0);
+            this.LB_userName.Name = "LB_userName";
+            this.LB_userName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LB_userName.Size = new System.Drawing.Size(0, 45);
+            this.LB_userName.TabIndex = 142;
+            // 
+            // Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(420, 835);
+            this.Controls.Add(this.LB_userName);
             this.Controls.Add(this.header);
             this.Controls.Add(this.DGV_number);
             this.Controls.Add(this.BTN_all);
@@ -409,15 +465,28 @@
             this.Controls.Add(this.LB_hi);
             this.Controls.Add(this.LN_header);
             this.Controls.Add(this.BTN_free);
+            this.Controls.Add(this.PN_countDays);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(15, 15);
-            this.Name = "persona";
+            this.Name = "Persona";
+            this.Load += new System.EventHandler(this.Persona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_number)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            this.PN_countDays.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label LB_userName;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+
+        private System.Windows.Forms.Panel PN_countDays;
 
         private System.Windows.Forms.Button BTN_30;
         private System.Windows.Forms.Button BTN_1;

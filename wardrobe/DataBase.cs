@@ -13,9 +13,12 @@ namespace wardrobe
 {
     public class DataBase
     {
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source = DESKTOP-KSHLJ2B; Initial Catalog = wardrobe; Integrated Security = True");
+        private string vladDB = "WIN-JT56SL0IR1J";
+        private static string sashaDB = "DESKTOP-KSHLJ2B";
 
-        public void openConnection()
+        static SqlConnection sqlConnection = new SqlConnection($@"Data Source = {sashaDB}; Initial Catalog = wardrobe; Integrated Security = True");
+
+        public static void openConnection()
         {
             if (sqlConnection.State == System.Data.ConnectionState.Closed)
             {
@@ -23,7 +26,7 @@ namespace wardrobe
             }
         }
             
-        public void closeConnection()
+        public static void closeConnection()
         {
             if (sqlConnection.State == System.Data.ConnectionState.Open)
             {

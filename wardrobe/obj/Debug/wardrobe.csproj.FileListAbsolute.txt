@@ -69,3 +69,19 @@ E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.exe
 E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.pdb
 E:\github\war\wardrobe\wardrobe\obj\Debug\wardrobe.ConfirmationForm.resources
 E:\github\wardrobe\wardrobe\obj\Debug\wardrobe.ConfirmationForm.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\bin\Debug\wardrobe.exe.config
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\bin\Debug\wardrobe.pdb
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.AssemblyReference.cache
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.SuggestedBindingRedirects.cache
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.admin.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.ConfirmationForm.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.Form1.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.persona.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.privateOffice.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.Properties.Resources.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.reg.resources
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.GenerateResource.cache
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CoreCompileInputs.cache
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.csproj.CopyComplete
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.exe
+C:\Users\san4e\OneDrive\Desktop\wardrobe2 (1)\wardrobe\wardrobe\obj\Debug\wardrobe.pdb

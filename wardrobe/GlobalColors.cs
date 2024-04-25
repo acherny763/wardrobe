@@ -4,7 +4,8 @@ namespace wardrobe
 {
     public static class GlobalColors
     {
-        public static readonly Color Bg = Color.FromArgb(26, 29, 33);
+        //public static readonly Color Bg = Color.FromArgb(26, 29, 33);
+        public static readonly Color Bg = Color.FromArgb(27, 32, 38);
         public static readonly Color Dark = Color.FromArgb(40, 44, 52);
         public static readonly Color Txt = Color.FromArgb(204, 212, 224);
         public static readonly Color DarkTxt = Color.FromArgb(119, 125, 134);

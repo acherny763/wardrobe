@@ -13,30 +13,30 @@ namespace wardrobe
 {
     public class DataBase
     {
-        private static string vladDB = "WIN-JT56SL0IR1J";
-        private static string sashaDB = "DESKTOP-KSHLJ2B";
+        private const string VladDb = "WIN-JT56SL0IR1J";
+        private const string SashaDb = "DESKTOP-KSHLJ2B";
 
-        static SqlConnection sqlConnection = new SqlConnection($@"Data Source = {sashaDB}; Initial Catalog = wardrobe; Integrated Security = True");
+        private static readonly SqlConnection SqlConnection = new SqlConnection($@"Data Source = {SashaDb}; Initial Catalog = wardrobe; Integrated Security = True");
 
         public static void openConnection()
         {
-            if (sqlConnection.State == System.Data.ConnectionState.Closed)
+            if (SqlConnection.State == System.Data.ConnectionState.Closed)
             {
-                sqlConnection.Open();
+                SqlConnection.Open();
             }
         }
             
         public static void closeConnection()
         {
-            if (sqlConnection.State == System.Data.ConnectionState.Open)
+            if (SqlConnection.State == System.Data.ConnectionState.Open)
             {
-                sqlConnection.Close();
+                SqlConnection.Close();
             }
         }
 
         public SqlConnection getConnection()
         {
-            return sqlConnection;
+            return SqlConnection;
         }
     }
 }

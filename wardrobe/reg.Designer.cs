@@ -433,6 +433,7 @@ namespace wardrobe
             this.BTN_registration.Text = "Зарегистрироваться";
             this.BTN_registration.TextColor = System.Drawing.Color.White;
             this.BTN_registration.UseVisualStyleBackColor = true;
+            this.BTN_registration.Click += new System.EventHandler(this.BTN_registration_Click);
             // 
             // PN_log
             // 

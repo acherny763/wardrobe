@@ -16,6 +16,7 @@ namespace wardrobe
                 textBox.Leave += TextBox_Leave;
                 textBox.Enter += TextBox_Enter;
                 textBox.Enter += TextBox_Click;
+                textBox.KeyPress += TextBox_KeyPress;
             }
         }
         
@@ -101,6 +102,25 @@ namespace wardrobe
             
             if (!string.IsNullOrWhiteSpace(textBox.Text) && textBox.Text != labels.GetType().GetProperty(textBoxText)?.GetValue(labels).ToString()) return;
             textBox.Text = string.Empty;
+        }
+
+        private static void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            var textBoxText = textBox.Name;
+
+            switch (textBoxText)
+            {
+                case "TB_lastName":
+                case "TB_firstName":
+                case "TB_patronymic":
+                case "TB_group":
+                    if (char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                    break;
+            }
         }
         
         private static void TextBox_Click(object sender, EventArgs e)

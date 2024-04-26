@@ -17,7 +17,7 @@ namespace wardrobe
     public partial class Persona : Form
     {
         private readonly DataBase _dataBase = new DataBase();
-        private int _userId;
+        private readonly int _userId;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
@@ -116,6 +116,24 @@ namespace wardrobe
                 {
                     DGV_number.Rows[row].Cells[col].Value = value;
                     value++;
+                    
+                    DataBase.openConnection();
+                    var adapter = new SqlDataAdapter();
+                    var table = new DataTable();
+                    var query =
+                        $"SELECT id_number FROM reserved_numbers where id_number={value}";
+            
+                    var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+                        
+                    adapter.SelectCommand = sqlCommand;
+                    adapter.Fill(table);
+                    if (table.Rows.Count == 1)
+                    {
+                        DGV_number.Rows[row].Cells[col].Style.ForeColor = GlobalColors.Blue; 
+                    }
+                    
+                    
+                    DataBase.closeConnection();
                 }
             }
             foreach (DataGridViewColumn column in DGV_number.Columns)

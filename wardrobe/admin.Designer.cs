@@ -42,13 +42,13 @@
             this.header = new System.Windows.Forms.Panel();
             this.BTN_search = new System.Windows.Forms.Button();
             this.LN_header = new System.Windows.Forms.Button();
-            this.BTN_free = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.BTN_num = new System.Windows.Forms.Button();
+            this.BTN_group = new System.Windows.Forms.Button();
+            this.BTN_fam = new System.Windows.Forms.Button();
+            this.BTN_name = new System.Windows.Forms.Button();
+            this.BTN_otc = new System.Windows.Forms.Button();
+            this.BTN_endDate = new System.Windows.Forms.Button();
+            this.Btn_startDate = new System.Windows.Forms.Button();
             this.DGV_user = new System.Windows.Forms.DataGridView();
             this.TB_delete = new ePOSOne.btnProduct.Button_WOC();
             this.button7 = new System.Windows.Forms.Button();
@@ -152,103 +152,103 @@
             this.LN_header.TabIndex = 124;
             this.LN_header.UseVisualStyleBackColor = false;
             // 
-            // BTN_free
+            // BTN_num
             // 
-            this.BTN_free.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.BTN_free.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.BTN_free.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_free.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BTN_free.ForeColor = System.Drawing.SystemColors.Window;
-            this.BTN_free.Location = new System.Drawing.Point(30, 183);
-            this.BTN_free.Name = "BTN_free";
-            this.BTN_free.Size = new System.Drawing.Size(155, 40);
-            this.BTN_free.TabIndex = 125;
-            this.BTN_free.Text = "Номер\r\n";
-            this.BTN_free.UseVisualStyleBackColor = true;
+            this.BTN_num.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_num.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_num.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_num.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BTN_num.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTN_num.Location = new System.Drawing.Point(30, 183);
+            this.BTN_num.Name = "BTN_num";
+            this.BTN_num.Size = new System.Drawing.Size(155, 40);
+            this.BTN_num.TabIndex = 125;
+            this.BTN_num.Text = "Номер\r\n";
+            this.BTN_num.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BTN_group
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(191, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 40);
-            this.button1.TabIndex = 126;
-            this.button1.Text = "Группа";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTN_group.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_group.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_group.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.BTN_group.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTN_group.Location = new System.Drawing.Point(191, 183);
+            this.BTN_group.Name = "BTN_group";
+            this.BTN_group.Size = new System.Drawing.Size(137, 40);
+            this.BTN_group.TabIndex = 126;
+            this.BTN_group.Text = "Группа";
+            this.BTN_group.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BTN_fam
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(334, 183);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 40);
-            this.button2.TabIndex = 127;
-            this.button2.Text = "Фамилия";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTN_fam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_fam.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_fam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_fam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.BTN_fam.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTN_fam.Location = new System.Drawing.Point(334, 183);
+            this.BTN_fam.Name = "BTN_fam";
+            this.BTN_fam.Size = new System.Drawing.Size(165, 40);
+            this.BTN_fam.TabIndex = 127;
+            this.BTN_fam.Text = "Фамилия";
+            this.BTN_fam.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BTN_name
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(505, 183);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 40);
-            this.button3.TabIndex = 128;
-            this.button3.Text = "Имя";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BTN_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_name.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.BTN_name.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTN_name.Location = new System.Drawing.Point(505, 183);
+            this.BTN_name.Name = "BTN_name";
+            this.BTN_name.Size = new System.Drawing.Size(140, 40);
+            this.BTN_name.TabIndex = 128;
+            this.BTN_name.Text = "Имя";
+            this.BTN_name.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BTN_otc
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Location = new System.Drawing.Point(651, 183);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 40);
-            this.button4.TabIndex = 129;
-            this.button4.Text = "Отчество";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BTN_otc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_otc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_otc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_otc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.BTN_otc.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTN_otc.Location = new System.Drawing.Point(651, 183);
+            this.BTN_otc.Name = "BTN_otc";
+            this.BTN_otc.Size = new System.Drawing.Size(200, 40);
+            this.BTN_otc.TabIndex = 129;
+            this.BTN_otc.Text = "Отчество";
+            this.BTN_otc.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BTN_endDate
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button5.ForeColor = System.Drawing.SystemColors.Window;
-            this.button5.Location = new System.Drawing.Point(1097, 183);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(264, 40);
-            this.button5.TabIndex = 130;
-            this.button5.Text = "Дата окончания номера\r\n";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BTN_endDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_endDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_endDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.BTN_endDate.ForeColor = System.Drawing.SystemColors.Window;
+            this.BTN_endDate.Location = new System.Drawing.Point(1097, 183);
+            this.BTN_endDate.Name = "BTN_endDate";
+            this.BTN_endDate.Size = new System.Drawing.Size(264, 40);
+            this.BTN_endDate.TabIndex = 130;
+            this.BTN_endDate.Text = "Дата окончания номера\r\n";
+            this.BTN_endDate.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // Btn_startDate
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Location = new System.Drawing.Point(857, 183);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(234, 40);
-            this.button6.TabIndex = 131;
-            this.button6.Text = "Дата взятия номера";
-            this.button6.UseVisualStyleBackColor = true;
+            this.Btn_startDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.Btn_startDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.Btn_startDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Btn_startDate.ForeColor = System.Drawing.SystemColors.Window;
+            this.Btn_startDate.Location = new System.Drawing.Point(857, 183);
+            this.Btn_startDate.Name = "Btn_startDate";
+            this.Btn_startDate.Size = new System.Drawing.Size(234, 40);
+            this.Btn_startDate.TabIndex = 131;
+            this.Btn_startDate.Text = "Дата взятия номера";
+            this.Btn_startDate.UseVisualStyleBackColor = true;
             // 
             // DGV_user
             // 
@@ -346,13 +346,13 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.TB_delete);
             this.Controls.Add(this.DGV_user);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.BTN_free);
+            this.Controls.Add(this.Btn_startDate);
+            this.Controls.Add(this.BTN_endDate);
+            this.Controls.Add(this.BTN_otc);
+            this.Controls.Add(this.BTN_name);
+            this.Controls.Add(this.BTN_fam);
+            this.Controls.Add(this.BTN_group);
+            this.Controls.Add(this.BTN_num);
             this.Controls.Add(this.LN_header);
             this.Controls.Add(this.BTN_search);
             this.Controls.Add(this.header);
@@ -373,19 +373,19 @@
 
         private System.Windows.Forms.DataGridView DGV_user;
 
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Btn_startDate;
 
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button BTN_endDate;
 
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BTN_otc;
 
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BTN_name;
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BTN_fam;
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTN_group;
 
-        private System.Windows.Forms.Button BTN_free;
+        private System.Windows.Forms.Button BTN_num;
 
         private System.Windows.Forms.Button LN_header;
 

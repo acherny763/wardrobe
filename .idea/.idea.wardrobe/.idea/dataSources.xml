@@ -8,11 +8,11 @@
       <jdbc-url>Server=;Database=wardrobe</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="DESKTOP-KSHLJ2B" uuid="1603bed0-ff8a-4d34-a1cc-fab202ff2bd5">
+    <data-source source="LOCAL" name="WIN-JT56SL0IR1J" uuid="85229016-fdd0-4ab9-9c97-4906b2f4eb24">
       <driver-ref>sqlserver.jb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.jetbrains.jdbc.sqlserver.SqlServerDriver</jdbc-driver>
-      <jdbc-url>Server=DESKTOP-KSHLJ2B;Database=wardrobe</jdbc-url>
+      <jdbc-url>Server=WIN-JT56SL0IR1J;Database=wardrobe</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

@@ -79,6 +79,7 @@
             this.BTN_occupied.TabIndex = 128;
             this.BTN_occupied.Text = "Занятые";
             this.BTN_occupied.UseVisualStyleBackColor = true;
+            this.BTN_occupied.Click += new System.EventHandler(this.BTN_occupied_Click);
             // 
             // label4
             // 
@@ -156,6 +157,7 @@
             this.BTN_free.TabIndex = 120;
             this.BTN_free.Text = "Свободные";
             this.BTN_free.UseVisualStyleBackColor = true;
+            this.BTN_free.Click += new System.EventHandler(this.BTN_free_Click);
             // 
             // button1
             // 
@@ -243,6 +245,7 @@
             this.BTN_all.TabIndex = 138;
             this.BTN_all.Text = "Все";
             this.BTN_all.UseVisualStyleBackColor = false;
+            this.BTN_all.Click += new System.EventHandler(this.BTN_all_Click);
             // 
             // DGV_number
             // 
@@ -275,6 +278,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_number.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_number.EnableHeadersVisualStyles = false;
+            this.DGV_number.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DGV_number.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.DGV_number.Location = new System.Drawing.Point(30, 240);
             this.DGV_number.MultiSelect = false;

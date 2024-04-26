@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace wardrobe
@@ -60,6 +61,7 @@ namespace wardrobe
             BTN_1.Click += Button_num_Click;
             BTN_7.Click += Button_num_Click;
             BTN_30.Click += Button_num_Click;
+            
         }
 
         public sealed override Color BackColor
@@ -95,21 +97,22 @@ namespace wardrobe
             DGV_number.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DGV_number.Width, DGV_number.Height, 24, 24));
             DGV_number.CellFormatting += DGV_number_CellFormatting;
             
+            
             DGV_number.RowHeadersVisible = false;
             DGV_number.ColumnHeadersVisible = false;
             DGV_number.ScrollBars = ScrollBars.Vertical;
             
             var newColumn = new DataGridViewTextBoxColumn();
-
+            
             DGV_number.Columns.Add(newColumn);
             
             for (int i = 1; i <= 5; i++)
             {
                 DGV_number.Columns.Add(new DataGridViewTextBoxColumn());
             }
-            
-            var value = 1;
-            for (var row = 0; row < 120; row++)
+            /*
+            int value = 1;
+            for (var row = 0; row < 20; row++)
             {
                 DGV_number.Rows.Add();
                 for (var col = 0; col < 5; col++)
@@ -136,6 +139,7 @@ namespace wardrobe
                     DataBase.closeConnection();
                 }
             }
+            */
             foreach (DataGridViewColumn column in DGV_number.Columns)
             {
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -160,16 +164,98 @@ namespace wardrobe
             {
                 row.Resizable = DataGridViewTriState.False;
             }
-            
         }
-        private void DGV_number_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void FillDataGridViewFromDatabase(string query)
         {
-            if (e.Value == null) return;
-            
-            DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = GlobalColors.Dark;
-            DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = GlobalColors.White;
+            DGV_number.Rows.Clear(); // Очистка таблицы перед заполнением новыми данными
+
+            for (int i = 1; i <= 5; i++)
+            {
+                DGV_number.Columns.Add(new DataGridViewTextBoxColumn());
+            }
+
+            DataBase.openConnection();
+
+            SqlCommand sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                int columnIndex = 0; // Индекс текущей ячейки в строке
+                DataGridViewRow row = new DataGridViewRow(); // Создаем одну строку перед циклом
+                row.CreateCells(DGV_number);
+
+                while (reader.Read())
+                {
+                    int value = reader.GetInt32(0); // Предположим, что id_number - это целочисленное значение
+                    row.Cells[columnIndex].Value = value; // Добавляем значение в текущую ячейку строки
+
+                    // Устанавливаем цвет фона для текущей ячейки
+                    row.Cells[columnIndex].Style.BackColor = GlobalColors.Dark;
+
+                    columnIndex++; // Увеличиваем индекс для следующей ячейки
+
+                    if (columnIndex == 5) // Если достигли предела в 5 ячеек в строке
+                    {
+                        DGV_number.Rows.Add(row); // Добавляем заполненную строку в таблицу
+                        row = new DataGridViewRow(); // Создаем новую строку для следующих 5 чисел
+                        row.CreateCells(DGV_number);
+                        
+                        columnIndex = 0; // Сбрасываем индекс столбца
+                    }
+                }
+
+                // Добавляем оставшиеся ячейки, если их число не кратно 5
+                if (columnIndex > 0)
+                {
+                    for (int i = columnIndex; i < 5; i++)
+                    {
+                        row.Cells[i].Style.BackColor = GlobalColors.Dark;
+                        row.Cells[i].ReadOnly = true; 
+                        
+                    }
+                    
+                    DGV_number.Rows.Add(row);
+                }
+
+                SetTableSettings();
+            }
+
+            reader.Close();
+            DataBase.closeConnection();
         }
- 
+
+        
+        private void DGV_number_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+       {
+           if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && e.RowIndex < DGV_number.Rows.Count)
+           {
+               if (DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex] != null && DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+               {
+                   if (int.TryParse(DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out int value))
+                   {
+                       DataBase.openConnection();
+                       DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = GlobalColors.Dark;
+                       var query = $"SELECT id_number FROM reserved_numbers where id_number={value}";
+                       var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+                       var result = sqlCommand.ExecuteScalar();
+
+                       if (result != null)
+                       {
+                           DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = GlobalColors.DarkTxt;
+                       }
+                       else
+                       {
+                           DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = GlobalColors.White;
+                       }
+                       DataBase.closeConnection();
+                   }
+               }
+           }
+       }
+       
+       
+        
         private void header_MouseDown_1(object sender, MouseEventArgs e)
         {
             _headerMouseMove.SetLastPoint(e);
@@ -204,6 +290,22 @@ namespace wardrobe
             LB_userName.Text = result != null ? result.ToString() : "Имя не найдено";
             
             DataBase.closeConnection();
+        }
+
+        private void BTN_all_Click(object sender, EventArgs e)
+        {
+            
+            FillDataGridViewFromDatabase("SELECT id FROM numbers");
+        }
+
+        private void BTN_occupied_Click(object sender, EventArgs e)
+        {
+            FillDataGridViewFromDatabase("SELECT id_number FROM reserved_numbers");
+        }
+
+        private void BTN_free_Click(object sender, EventArgs e)
+        {
+            FillDataGridViewFromDatabase("SELECT id FROM numbers WHERE id NOT IN (SELECT id_number FROM reserved_numbers);");
         }
     }
 }

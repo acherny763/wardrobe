@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.TB_search = new System.Windows.Forms.TextBox();
             this.PN_search = new System.Windows.Forms.Panel();
             this.LB_close = new System.Windows.Forms.Label();
             this.LB_header = new System.Windows.Forms.Label();
@@ -52,30 +51,16 @@
             this.DGV_user = new System.Windows.Forms.DataGridView();
             this.TB_delete = new ePOSOne.btnProduct.Button_WOC();
             this.button7 = new System.Windows.Forms.Button();
+            this.TB_search = new System.Windows.Forms.TextBox();
+            this.PN_search.SuspendLayout();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_user)).BeginInit();
             this.SuspendLayout();
             // 
-            // TB_search
-            // 
-            this.TB_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
-            this.TB_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.TB_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TB_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
-            this.TB_search.Location = new System.Drawing.Point(60, 86);
-            this.TB_search.Margin = new System.Windows.Forms.Padding(20);
-            this.TB_search.MaxLength = 25;
-            this.TB_search.Name = "TB_search";
-            this.TB_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TB_search.Size = new System.Drawing.Size(320, 22);
-            this.TB_search.TabIndex = 13;
-            this.TB_search.Text = "Логин";
-            this.TB_search.TextChanged += new System.EventHandler(this.TB_login_TextChanged);
-            // 
             // PN_search
             // 
             this.PN_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
+            this.PN_search.Controls.Add(this.TB_search);
             this.PN_search.Location = new System.Drawing.Point(30, 72);
             this.PN_search.Name = "PN_search";
             this.PN_search.Size = new System.Drawing.Size(1488, 56);
@@ -337,6 +322,22 @@
             this.button7.TabIndex = 142;
             this.button7.UseVisualStyleBackColor = false;
             // 
+            // TB_search
+            // 
+            this.TB_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
+            this.TB_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
+            this.TB_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TB_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
+            this.TB_search.Location = new System.Drawing.Point(20, 17);
+            this.TB_search.Margin = new System.Windows.Forms.Padding(20);
+            this.TB_search.MaxLength = 25;
+            this.TB_search.Name = "TB_search";
+            this.TB_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TB_search.Size = new System.Drawing.Size(320, 22);
+            this.TB_search.TabIndex = 143;
+            this.TB_search.Text = "ФИО студента";
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,15 +357,15 @@
             this.Controls.Add(this.LN_header);
             this.Controls.Add(this.BTN_search);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.TB_search);
             this.Controls.Add(this.PN_search);
             this.Name = "admin";
             this.Text = "Гардероб ТПК";
+            this.PN_search.ResumeLayout(false);
+            this.PN_search.PerformLayout();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_user)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         private System.Windows.Forms.Button button7;

@@ -16,5 +16,10 @@ namespace wardrobe
         {
             InitializeComponent();
         }
+
+        private void TB_login_TextChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

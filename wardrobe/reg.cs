@@ -16,7 +16,9 @@ namespace wardrobe
 {
     public partial class Reg : Form
     {
+        private readonly DataBase _dataBase = new DataBase();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         private readonly HeaderMouseMove _headerMouseMove = new HeaderMouseMove();
         public Reg()
@@ -90,7 +92,7 @@ namespace wardrobe
                 return;
             }
             
-            using (var connection = new SqlConnection(@"Data Source = DESKTOP-KSHLJ2B; Initial Catalog = wardrobe; Integrated Security = True"))
+            using (var connection = new SqlConnection(@"Data Source = WIN-JT56SL0IR1J; Initial Catalog = wardrobe; Integrated Security = True"))
             {
                 connection.Open();
 

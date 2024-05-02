@@ -61,7 +61,7 @@ namespace wardrobe
             BTN_1.Click += Button_num_Click;
             BTN_7.Click += Button_num_Click;
             BTN_30.Click += Button_num_Click;
-            
+            FillDataGridViewFromDatabase("SELECT id FROM numbers");
         }
 
         public sealed override Color BackColor

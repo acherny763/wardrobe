@@ -7,11 +7,11 @@ namespace wardrobe
     {
         public static void CloseForm(Form form, string buttonName)
         {
-            Control[] controls = form.Controls.Find(buttonName, true);
-            
+            var controls = form.Controls.Find(buttonName, true);
+
             if (controls.Length > 0 && controls[0] is Label closeButton)
             {
-                closeButton.Click += (sender, e) => form.Close();
+                closeButton.Click += (sender, e) => Application.Exit();
             }
             else
             {
@@ -21,7 +21,7 @@ namespace wardrobe
         
         public static void MinimizeForm(Form form, string buttonName)
         {
-            Control[] controls = form.Controls.Find(buttonName, true);
+            var controls = form.Controls.Find(buttonName, true);
             
             if (controls.Length > 0 && controls[0] is Label minimizeButton)
             {

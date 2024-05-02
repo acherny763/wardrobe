@@ -16,7 +16,7 @@ namespace wardrobe
         private static string vladDB = "WIN-JT56SL0IR1J";
         private static string sashaDB = "DESKTOP-KSHLJ2B";
 
-        private static readonly SqlConnection sqlConnection = new SqlConnection($@"Data Source = {vladDB}; Initial Catalog = wardrobe; Integrated Security = True");
+        private static readonly SqlConnection sqlConnection = new SqlConnection($@"Data Source = {sashaDB}; Initial Catalog = wardrobe; Integrated Security = True");
 
 
         public static void openConnection()

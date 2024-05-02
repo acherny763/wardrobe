@@ -315,7 +315,7 @@ namespace wardrobe
             this.TB_numberGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
             this.TB_numberGroup.Location = new System.Drawing.Point(52, 621);
             this.TB_numberGroup.Margin = new System.Windows.Forms.Padding(20);
-            this.TB_numberGroup.MaxLength = 25;
+            this.TB_numberGroup.MaxLength = 1;
             this.TB_numberGroup.Name = "TB_numberGroup";
             this.TB_numberGroup.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TB_numberGroup.Size = new System.Drawing.Size(320, 26);
@@ -330,7 +330,7 @@ namespace wardrobe
             this.TB_course.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
             this.TB_course.Location = new System.Drawing.Point(52, 564);
             this.TB_course.Margin = new System.Windows.Forms.Padding(20);
-            this.TB_course.MaxLength = 25;
+            this.TB_course.MaxLength = 1;
             this.TB_course.Name = "TB_course";
             this.TB_course.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TB_course.Size = new System.Drawing.Size(320, 26);
@@ -360,7 +360,7 @@ namespace wardrobe
             this.TB_group.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
             this.TB_group.Location = new System.Drawing.Point(52, 507);
             this.TB_group.Margin = new System.Windows.Forms.Padding(20);
-            this.TB_group.MaxLength = 25;
+            this.TB_group.MaxLength = 2;
             this.TB_group.Name = "TB_group";
             this.TB_group.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TB_group.Size = new System.Drawing.Size(320, 26);
@@ -394,7 +394,7 @@ namespace wardrobe
             this.TB_log.Name = "TB_log";
             this.TB_log.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TB_log.Size = new System.Drawing.Size(320, 26);
-            this.TB_log.TabIndex = 126;
+            this.TB_log.TabIndex = 100;
             this.TB_log.Text = "Логин";
             // 
             // BTN_signUp

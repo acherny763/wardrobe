@@ -19,6 +19,9 @@ namespace wardrobe
     {
         private readonly DataBase _dataBase = new DataBase();
         private readonly int _userId;
+        private string _clickedCellValue;
+        private bool _isCellFree = false;
+        private int _countDays = 1;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
@@ -32,8 +35,7 @@ namespace wardrobe
 
             StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = GlobalColors.Bg;
-
-            //pictureBox1.Paint += new PaintEventHandler(pictureBox1_Paint);
+            
             FormUtilities.CloseForm(this, "LB_close");
             FormUtilities.MinimizeForm(this, "LB_roll");
 
@@ -57,10 +59,13 @@ namespace wardrobe
             BTN_all.Click += Button_Click;
             BTN_free.Click += Button_Click;
             BTN_occupied.Click += Button_Click;
-            
+
             BTN_1.Click += Button_num_Click;
             BTN_7.Click += Button_num_Click;
             BTN_30.Click += Button_num_Click;
+            
+            BTN_reserve.Text = LB_userNum.Text == "—" ? "Снять бронь" : "Забронировать";
+
             FillDataGridViewFromDatabase("SELECT id FROM numbers");
         }
 
@@ -96,6 +101,7 @@ namespace wardrobe
         {
             DGV_number.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, DGV_number.Width, DGV_number.Height, 24, 24));
             DGV_number.CellFormatting += DGV_number_CellFormatting;
+            DGV_number.CellClick += DGV_number_CellClick;
             
             
             DGV_number.RowHeadersVisible = false;
@@ -106,40 +112,11 @@ namespace wardrobe
             
             DGV_number.Columns.Add(newColumn);
             
-            for (int i = 1; i <= 5; i++)
+            for (var i = 1; i <= 5; i++)
             {
                 DGV_number.Columns.Add(new DataGridViewTextBoxColumn());
             }
-            /*
-            int value = 1;
-            for (var row = 0; row < 20; row++)
-            {
-                DGV_number.Rows.Add();
-                for (var col = 0; col < 5; col++)
-                {
-                    DGV_number.Rows[row].Cells[col].Value = value;
-                    value++;
-                    
-                    DataBase.openConnection();
-                    var adapter = new SqlDataAdapter();
-                    var table = new DataTable();
-                    var query =
-                        $"SELECT id_number FROM reserved_numbers where id_number={value}";
             
-                    var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
-                        
-                    adapter.SelectCommand = sqlCommand;
-                    adapter.Fill(table);
-                    if (table.Rows.Count == 1)
-                    {
-                        DGV_number.Rows[row].Cells[col].Style.ForeColor = GlobalColors.Blue; 
-                    }
-                    
-                    
-                    DataBase.closeConnection();
-                }
-            }
-            */
             foreach (DataGridViewColumn column in DGV_number.Columns)
             {
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -169,33 +146,32 @@ namespace wardrobe
         {
             DGV_number.Rows.Clear(); // Очистка таблицы перед заполнением новыми данными
 
-            for (int i = 1; i <= 5; i++)
+            for (var i = 1; i <= 5; i++)
             {
                 DGV_number.Columns.Add(new DataGridViewTextBoxColumn());
             }
 
             DataBase.openConnection();
 
-            SqlCommand sqlCommand = new SqlCommand(query, _dataBase.getConnection());
-            SqlDataReader reader = sqlCommand.ExecuteReader();
+            var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+            var reader = sqlCommand.ExecuteReader();
 
             if (reader.HasRows)
             {
-                int columnIndex = 0; // Индекс текущей ячейки в строке
-                DataGridViewRow row = new DataGridViewRow(); // Создаем одну строку перед циклом
+                var columnIndex = 0; // Индекс текущей ячейки в строке
+                var row = new DataGridViewRow(); // Создаем одну строку перед циклом
                 row.CreateCells(DGV_number);
 
                 while (reader.Read())
                 {
-                    int value = reader.GetInt32(0); // Предположим, что id_number - это целочисленное значение
+                    var value = reader.GetInt32(0);
                     row.Cells[columnIndex].Value = value; // Добавляем значение в текущую ячейку строки
-
-                    // Устанавливаем цвет фона для текущей ячейки
+                    
                     row.Cells[columnIndex].Style.BackColor = GlobalColors.Dark;
 
-                    columnIndex++; // Увеличиваем индекс для следующей ячейки
+                    columnIndex++;
 
-                    if (columnIndex == 5) // Если достигли предела в 5 ячеек в строке
+                    if (columnIndex == 5)
                     {
                         DGV_number.Rows.Add(row); // Добавляем заполненную строку в таблицу
                         row = new DataGridViewRow(); // Создаем новую строку для следующих 5 чисел
@@ -208,7 +184,7 @@ namespace wardrobe
                 // Добавляем оставшиеся ячейки, если их число не кратно 5
                 if (columnIndex > 0)
                 {
-                    for (int i = columnIndex; i < 5; i++)
+                    for (var i = columnIndex; i < 5; i++)
                     {
                         row.Cells[i].Style.BackColor = GlobalColors.Dark;
                         row.Cells[i].ReadOnly = true; 
@@ -225,34 +201,48 @@ namespace wardrobe
             DataBase.closeConnection();
         }
 
+        private void DGV_number_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var cell = DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            
+            _isCellFree = cell.Style.BackColor != GlobalColors.LightBg;
+            
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                _clickedCellValue = Convert.ToString(cell.Value);
+            }
+        }
         
         private void DGV_number_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-       {
-           if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && e.RowIndex < DGV_number.Rows.Count)
-           {
-               if (DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex] != null && DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-               {
-                   if (int.TryParse(DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out int value))
-                   {
-                       DataBase.openConnection();
-                       DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = GlobalColors.Dark;
-                       var query = $"SELECT id_number FROM reserved_numbers where id_number={value}";
-                       var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
-                       var result = sqlCommand.ExecuteScalar();
+        {
+            var cell = DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            
+            if (e.RowIndex < 0 || e.ColumnIndex < 0 || e.RowIndex >= DGV_number.Rows.Count) return;
+            
+            if (cell?.Value == null) return;
+            
+            if (!int.TryParse(cell.Value.ToString(), out var value)) return;
+            
+            DataBase.openConnection();
+            var query = $"SELECT id_number FROM reserved_numbers where id_number = {value}";
+            var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+            var result = sqlCommand.ExecuteScalar();
 
-                       if (result != null)
-                       {
-                           DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = GlobalColors.DarkTxt;
-                       }
-                       else
-                       {
-                           DGV_number.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = GlobalColors.White;
-                       }
-                       DataBase.closeConnection();
-                   }
-               }
-           }
-       }
+            if (result != null)
+            {
+                cell.Style.ForeColor = GlobalColors.DarkTxt;
+                cell.Style.BackColor = GlobalColors.LightBg;
+
+                cell.ReadOnly = true;
+            }
+            else
+            {
+                cell.Style.ForeColor = GlobalColors.White;
+                cell.Style.BackColor = GlobalColors.Dark;
+            }
+
+            DataBase.closeConnection();
+        }
        
        
         
@@ -278,18 +268,76 @@ namespace wardrobe
 
         private void Persona_Load(object sender, EventArgs e)
         {
-            DataBase.openConnection();
-            
-            var query =
-                $"SELECT a.name FROM users a JOIN users_data b ON a.id = b.id_user WHERE b.id_user = @UserId";
+            NumbersDataLoad();
+        }
 
-            var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
-            sqlCommand.Parameters.AddWithValue("@UserId", _userId);
-            var result = sqlCommand.ExecuteScalar();
-            
-            LB_userName.Text = result != null ? result.ToString() : "Имя не найдено";
-            
-            DataBase.closeConnection();
+        private void NumbersDataLoad()
+        {
+            try
+            {
+                DataBase.openConnection();
+
+                const string query = @"SELECT 
+                a.name,
+                r.id_number,
+                r.last_date
+            FROM 
+                users a 
+            JOIN 
+                users_data b ON a.id = b.id_user 
+            LEFT JOIN 
+                reserved_numbers r ON r.id_user = a.id
+            WHERE 
+                b.id_user = @UserId";
+
+                var sqlCommand = new SqlCommand(query, _dataBase.getConnection());
+                sqlCommand.Parameters.AddWithValue("@UserId", _userId);
+        
+                using (var reader = sqlCommand.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        if (!reader.IsDBNull(reader.GetOrdinal("id_number")))
+                        {
+                            LB_userNum.Text = reader["id_number"].ToString();
+                            LB_userNum.ForeColor = GlobalColors.White;
+                        }
+                        else
+                        {
+                            LB_userNum.Text = "—";
+                            LB_userNum.ForeColor = GlobalColors.White;
+                        }
+
+                        LB_userName.Text = reader["name"].ToString();
+                        
+                        if (!reader.IsDBNull(reader.GetOrdinal("last_date")))
+                        {
+                            var lastDate = DateTime.Parse(reader["last_date"].ToString());
+                            LB_userExpire.Text = lastDate.ToString("d MMMM, HH:mm");
+                            LB_userExpire.ForeColor = GlobalColors.White;
+                        }
+                        else
+                        {
+                            LB_userExpire.Text = "—";
+                            LB_userExpire.ForeColor = GlobalColors.White;
+                        }
+                    }
+                    else
+                    {
+                        LB_userName.Text = "Имя не найдено";
+                        LB_userNum.Text = "—";
+                        LB_userExpire.Text = "—";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}");
+            }
+            finally
+            {
+                DataBase.closeConnection();
+            }
         }
 
         private void BTN_all_Click(object sender, EventArgs e)
@@ -305,7 +353,97 @@ namespace wardrobe
 
         private void BTN_free_Click(object sender, EventArgs e)
         {
-            FillDataGridViewFromDatabase("SELECT id FROM numbers WHERE id NOT IN (SELECT id_number FROM reserved_numbers);");
+            FillDataGridViewFromDatabase("SELECT id FROM numbers WHERE id NOT IN (SELECT id_number FROM reserved_numbers)");
+        }
+
+        private void BTN_1_Click(object sender, EventArgs e)
+        {
+            _countDays = 1;
+        }
+
+        private void BTN_7_Click(object sender, EventArgs e)
+        {
+            _countDays = 7;
+        }
+
+        private void BTN_30_Click(object sender, EventArgs e)
+        {
+            _countDays = 30;
+        }
+        
+        private void BTN_reserve_Click(object sender, EventArgs e)
+        {
+            switch (BTN_reserve.Text)
+            {
+                case "Забронировать":
+                {
+                    var cellValue = _clickedCellValue ?? "1";
+
+                    var startDate = DateTime.Now;
+                    var lastDate = DateTime.Today.AddDays(_countDays).AddHours(8).AddMinutes(0).AddSeconds(0);
+            
+                    startDate = startDate.AddMilliseconds(-startDate.Millisecond);
+                    lastDate = lastDate.AddMilliseconds(-lastDate.Millisecond);
+            
+                    try
+                    {
+                        DataBase.openConnection();
+                        using (var command = new SqlCommand("INSERT INTO reserved_numbers (id_number, id_user, start_date, last_date) VALUES (@id_number, @id_user, @start_date, @last_date)", _dataBase.getConnection()))
+                        {
+                            command.Parameters.AddWithValue("@id_number", cellValue);
+                            command.Parameters.AddWithValue("@id_user", _userId);
+                            command.Parameters.AddWithValue("@start_date", startDate);
+                            command.Parameters.AddWithValue("@last_date", lastDate);
+                            command.ExecuteNonQuery();
+                        }
+
+                        NumbersDataLoad();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ошибка при бронировании номера: {ex.Message}");
+                    }
+                    finally
+                    {
+                        BTN_reserve.Text = "Снять бронь";
+                        DataBase.closeConnection();
+                    }
+                
+                    BTN_reserve.Text = "Снять бронь";
+                    break;
+                }
+                case "Снять бронь" when BTN_reserve.Text != "Снять бронь":
+                    return;
+                case "Снять бронь":
+                    try
+                    {
+                        DataBase.openConnection();
+                        using (var command = new SqlCommand("DELETE FROM reserved_numbers WHERE id_user = @id_user", _dataBase.getConnection()))
+                        {
+                            command.Parameters.AddWithValue("@id_user", _userId);
+                            command.ExecuteNonQuery();
+                        }
+            
+                        NumbersDataLoad();
+                        BTN_reserve.Text = "Забронировать";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ошибка при удалении забронированного номера: {ex.Message}");
+                    }
+                    finally
+                    {
+                        DataBase.closeConnection();
+                    }
+                
+                    BTN_reserve.Text = "Забронировать";
+                    break;
+            }
+        }
+
+        private void BTN_signUp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

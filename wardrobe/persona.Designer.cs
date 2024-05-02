@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BTN_occupied = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LB_numbers = new System.Windows.Forms.Label();
             this.LB_expire = new System.Windows.Forms.Label();
             this.LB_num = new System.Windows.Forms.Label();
             this.LB_hi = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.LB_countDays = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.BTN_signUp = new ePOSOne.btnProduct.Button_WOC();
-            this.BTN_registration = new ePOSOne.btnProduct.Button_WOC();
+            this.BTN_reserve = new ePOSOne.btnProduct.Button_WOC();
             this.BTN_all = new System.Windows.Forms.Button();
             this.DGV_number = new System.Windows.Forms.DataGridView();
             this.LB_header = new System.Windows.Forms.Label();
@@ -59,6 +59,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LB_userName = new System.Windows.Forms.Label();
+            this.LB_userNum = new System.Windows.Forms.Label();
+            this.LB_userExpire = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_number)).BeginInit();
             this.header.SuspendLayout();
             this.PN_countDays.SuspendLayout();
@@ -81,31 +83,31 @@
             this.BTN_occupied.UseVisualStyleBackColor = true;
             this.BTN_occupied.Click += new System.EventHandler(this.BTN_occupied_Click);
             // 
-            // label4
+            // LB_numbers
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(30, 154);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(121, 33);
-            this.label4.TabIndex = 127;
-            this.label4.Text = "Номерки";
+            this.LB_numbers.AutoSize = true;
+            this.LB_numbers.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LB_numbers.ForeColor = System.Drawing.SystemColors.Window;
+            this.LB_numbers.Location = new System.Drawing.Point(30, 154);
+            this.LB_numbers.Margin = new System.Windows.Forms.Padding(0);
+            this.LB_numbers.Name = "LB_numbers";
+            this.LB_numbers.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LB_numbers.Size = new System.Drawing.Size(121, 33);
+            this.LB_numbers.TabIndex = 127;
+            this.LB_numbers.Text = "Номерки";
             // 
             // LB_expire
             // 
             this.LB_expire.AutoSize = true;
             this.LB_expire.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LB_expire.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.LB_expire.Location = new System.Drawing.Point(210, 101);
+            this.LB_expire.Location = new System.Drawing.Point(172, 101);
             this.LB_expire.Margin = new System.Windows.Forms.Padding(0);
             this.LB_expire.Name = "LB_expire";
             this.LB_expire.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LB_expire.Size = new System.Drawing.Size(117, 26);
+            this.LB_expire.Size = new System.Drawing.Size(98, 26);
             this.LB_expire.TabIndex = 126;
-            this.LB_expire.Text = "Истекает —";
+            this.LB_expire.Text = "Истекает";
             // 
             // LB_num
             // 
@@ -116,9 +118,9 @@
             this.LB_num.Margin = new System.Windows.Forms.Padding(0);
             this.LB_num.Name = "LB_num";
             this.LB_num.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LB_num.Size = new System.Drawing.Size(135, 26);
+            this.LB_num.Size = new System.Drawing.Size(116, 26);
             this.LB_num.TabIndex = 125;
-            this.LB_num.Text = "Твой номер —";
+            this.LB_num.Text = "Твой номер";
             // 
             // LB_hi
             // 
@@ -138,7 +140,7 @@
             this.LN_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
             this.LN_header.FlatAppearance.BorderSize = 0;
             this.LN_header.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LN_header.Location = new System.Drawing.Point(0, 134);
+            this.LN_header.Location = new System.Drawing.Point(0, 140);
             this.LN_header.Name = "LN_header";
             this.LN_header.Size = new System.Drawing.Size(420, 1);
             this.LN_header.TabIndex = 123;
@@ -212,25 +214,27 @@
             this.BTN_signUp.Text = "Выйти с аккаунта";
             this.BTN_signUp.TextColor = System.Drawing.Color.White;
             this.BTN_signUp.UseVisualStyleBackColor = true;
+            this.BTN_signUp.Click += new System.EventHandler(this.BTN_signUp_Click);
             // 
-            // BTN_registration
+            // BTN_reserve
             // 
-            this.BTN_registration.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
-            this.BTN_registration.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
-            this.BTN_registration.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_registration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_registration.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.BTN_registration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.BTN_registration.Location = new System.Drawing.Point(30, 667);
-            this.BTN_registration.Name = "BTN_registration";
-            this.BTN_registration.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.BTN_registration.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
-            this.BTN_registration.OnHoverTextColor = System.Drawing.Color.White;
-            this.BTN_registration.Size = new System.Drawing.Size(360, 56);
-            this.BTN_registration.TabIndex = 136;
-            this.BTN_registration.Text = "Забронировать";
-            this.BTN_registration.TextColor = System.Drawing.Color.White;
-            this.BTN_registration.UseVisualStyleBackColor = true;
+            this.BTN_reserve.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
+            this.BTN_reserve.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(241)))));
+            this.BTN_reserve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_reserve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_reserve.Font = new System.Drawing.Font("Manrope", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.BTN_reserve.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BTN_reserve.Location = new System.Drawing.Point(30, 667);
+            this.BTN_reserve.Name = "BTN_reserve";
+            this.BTN_reserve.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.BTN_reserve.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.BTN_reserve.OnHoverTextColor = System.Drawing.Color.White;
+            this.BTN_reserve.Size = new System.Drawing.Size(360, 56);
+            this.BTN_reserve.TabIndex = 136;
+            this.BTN_reserve.Text = "Забронировать";
+            this.BTN_reserve.TextColor = System.Drawing.Color.White;
+            this.BTN_reserve.UseVisualStyleBackColor = true;
+            this.BTN_reserve.Click += new System.EventHandler(this.BTN_reserve_Click);
             // 
             // BTN_all
             // 
@@ -372,6 +376,7 @@
             this.BTN_30.TabIndex = 129;
             this.BTN_30.Text = "30";
             this.BTN_30.UseVisualStyleBackColor = false;
+            this.BTN_30.Click += new System.EventHandler(this.BTN_30_Click);
             // 
             // BTN_7
             // 
@@ -386,6 +391,7 @@
             this.BTN_7.TabIndex = 132;
             this.BTN_7.Text = "7";
             this.BTN_7.UseVisualStyleBackColor = false;
+            this.BTN_7.Click += new System.EventHandler(this.BTN_7_Click);
             // 
             // BTN_1
             // 
@@ -400,6 +406,7 @@
             this.BTN_1.TabIndex = 131;
             this.BTN_1.Text = "1";
             this.BTN_1.UseVisualStyleBackColor = false;
+            this.BTN_1.Click += new System.EventHandler(this.BTN_1_Click);
             // 
             // PN_countDays
             // 
@@ -444,18 +451,46 @@
             this.LB_userName.Size = new System.Drawing.Size(0, 45);
             this.LB_userName.TabIndex = 142;
             // 
+            // LB_userNum
+            // 
+            this.LB_userNum.AutoSize = true;
+            this.LB_userNum.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Bold);
+            this.LB_userNum.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.LB_userNum.Location = new System.Drawing.Point(134, 101);
+            this.LB_userNum.Margin = new System.Windows.Forms.Padding(0);
+            this.LB_userNum.Name = "LB_userNum";
+            this.LB_userNum.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LB_userNum.Size = new System.Drawing.Size(27, 26);
+            this.LB_userNum.TabIndex = 143;
+            this.LB_userNum.Text = "—";
+            // 
+            // LB_userExpire
+            // 
+            this.LB_userExpire.AutoSize = true;
+            this.LB_userExpire.Font = new System.Drawing.Font("Manrope", 14.25F, System.Drawing.FontStyle.Bold);
+            this.LB_userExpire.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.LB_userExpire.Location = new System.Drawing.Point(263, 101);
+            this.LB_userExpire.Margin = new System.Windows.Forms.Padding(0);
+            this.LB_userExpire.Name = "LB_userExpire";
+            this.LB_userExpire.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LB_userExpire.Size = new System.Drawing.Size(27, 26);
+            this.LB_userExpire.TabIndex = 144;
+            this.LB_userExpire.Text = "—";
+            // 
             // Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(420, 835);
+            this.Controls.Add(this.LB_userExpire);
+            this.Controls.Add(this.LB_userNum);
             this.Controls.Add(this.LB_userName);
             this.Controls.Add(this.header);
             this.Controls.Add(this.DGV_number);
             this.Controls.Add(this.BTN_all);
             this.Controls.Add(this.BTN_signUp);
-            this.Controls.Add(this.BTN_registration);
+            this.Controls.Add(this.BTN_reserve);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.LB_countDays);
             this.Controls.Add(this.button1);
@@ -463,7 +498,7 @@
             this.Controls.Add(this.BTN_1);
             this.Controls.Add(this.BTN_30);
             this.Controls.Add(this.BTN_occupied);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.LB_numbers);
             this.Controls.Add(this.LB_expire);
             this.Controls.Add(this.LB_num);
             this.Controls.Add(this.LB_hi);
@@ -483,6 +518,9 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label LB_userNum;
+        private System.Windows.Forms.Label LB_userExpire;
 
         private System.Windows.Forms.Label LB_userName;
 
@@ -506,14 +544,14 @@
         private System.Windows.Forms.Button BTN_all;
 
         private ePOSOne.btnProduct.Button_WOC BTN_signUp;
-        private ePOSOne.btnProduct.Button_WOC BTN_registration;
+        private ePOSOne.btnProduct.Button_WOC BTN_reserve;
 
         private System.Windows.Forms.Button button2;
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label LB_countDays;
 
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LB_numbers;
         private System.Windows.Forms.Label LB_expire;
         private System.Windows.Forms.Label LB_hi;
         private System.Windows.Forms.Button LN_header;

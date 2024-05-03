@@ -48,11 +48,8 @@
             this.BTN_otc = new System.Windows.Forms.Button();
             this.BTN_endDate = new System.Windows.Forms.Button();
             this.Btn_startDate = new System.Windows.Forms.Button();
-            this.DGV_user = new System.Windows.Forms.DataGridView();
-            this.TB_delete = new ePOSOne.btnProduct.Button_WOC();
             this.button7 = new System.Windows.Forms.Button();
-            this.TB_search = new System.Windows.Forms.TextBox();
-            this.PN_search.SuspendLayout();
+            this.DGV_user = new System.Windows.Forms.DataGridView();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_user)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +57,6 @@
             // PN_search
             // 
             this.PN_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.PN_search.Controls.Add(this.TB_search);
             this.PN_search.Location = new System.Drawing.Point(30, 72);
             this.PN_search.Name = "PN_search";
             this.PN_search.Size = new System.Drawing.Size(1488, 56);
@@ -71,7 +67,7 @@
             this.LB_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LB_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.LB_close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.LB_close.Location = new System.Drawing.Point(1498, 10);
+            this.LB_close.Location = new System.Drawing.Point(1498, 9);
             this.LB_close.Name = "LB_close";
             this.LB_close.Size = new System.Drawing.Size(22, 22);
             this.LB_close.TabIndex = 0;
@@ -95,7 +91,7 @@
             this.LB_roll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LB_roll.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.LB_roll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.LB_roll.Location = new System.Drawing.Point(1467, 9);
+            this.LB_roll.Location = new System.Drawing.Point(1470, 6);
             this.LB_roll.Name = "LB_roll";
             this.LB_roll.Size = new System.Drawing.Size(22, 22);
             this.LB_roll.TabIndex = 13;
@@ -113,6 +109,8 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1532, 42);
             this.header.TabIndex = 16;
+            this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
+            this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
             // 
             // BTN_search
             // 
@@ -235,6 +233,17 @@
             this.Btn_startDate.Text = "Дата взятия номера";
             this.Btn_startDate.UseVisualStyleBackColor = true;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(0, 249);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(1548, 1);
+            this.button7.TabIndex = 142;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // DGV_user
             // 
             this.DGV_user.AllowUserToAddRows = false;
@@ -265,9 +274,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_user.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DGV_user.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.DGV_user.EnableHeadersVisualStyles = false;
             this.DGV_user.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.DGV_user.Location = new System.Drawing.Point(0, 250);
+            this.DGV_user.Location = new System.Drawing.Point(-30, 249);
             this.DGV_user.MultiSelect = false;
             this.DGV_user.Name = "DGV_user";
             this.DGV_user.ReadOnly = true;
@@ -292,52 +302,6 @@
             this.DGV_user.TabIndex = 140;
             this.DGV_user.TabStop = false;
             // 
-            // TB_delete
-            // 
-            this.TB_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
-            this.TB_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(35)))), ((int)(((byte)(38)))));
-            this.TB_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TB_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TB_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.TB_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.TB_delete.Location = new System.Drawing.Point(1367, 183);
-            this.TB_delete.Name = "TB_delete";
-            this.TB_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.TB_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
-            this.TB_delete.OnHoverTextColor = System.Drawing.Color.White;
-            this.TB_delete.Size = new System.Drawing.Size(134, 45);
-            this.TB_delete.TabIndex = 141;
-            this.TB_delete.Text = "Снять бронь";
-            this.TB_delete.TextColor = System.Drawing.Color.White;
-            this.TB_delete.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(0, 249);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(1548, 1);
-            this.button7.TabIndex = 142;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // TB_search
-            // 
-            this.TB_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
-            this.TB_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
-            this.TB_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TB_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(125)))), ((int)(((byte)(134)))));
-            this.TB_search.Location = new System.Drawing.Point(20, 17);
-            this.TB_search.Margin = new System.Windows.Forms.Padding(20);
-            this.TB_search.MaxLength = 25;
-            this.TB_search.Name = "TB_search";
-            this.TB_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TB_search.Size = new System.Drawing.Size(320, 22);
-            this.TB_search.TabIndex = 143;
-            this.TB_search.Text = "ФИО студента";
-            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +309,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1532, 858);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.TB_delete);
             this.Controls.Add(this.DGV_user);
             this.Controls.Add(this.Btn_startDate);
             this.Controls.Add(this.BTN_endDate);
@@ -358,10 +321,9 @@
             this.Controls.Add(this.BTN_search);
             this.Controls.Add(this.header);
             this.Controls.Add(this.PN_search);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "admin";
-            this.Text = "Гардероб ТПК";
-            this.PN_search.ResumeLayout(false);
-            this.PN_search.PerformLayout();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_user)).EndInit();
@@ -369,9 +331,6 @@
         }
 
         private System.Windows.Forms.Button button7;
-
-        private ePOSOne.btnProduct.Button_WOC TB_delete;
-
         private System.Windows.Forms.DataGridView DGV_user;
 
         private System.Windows.Forms.Button Btn_startDate;
@@ -397,7 +356,6 @@
         private System.Windows.Forms.Label LB_header;
         private System.Windows.Forms.Label LB_close;
 
-        private System.Windows.Forms.TextBox TB_search;
         private System.Windows.Forms.Panel PN_search;
 
         #endregion
